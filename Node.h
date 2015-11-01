@@ -3,14 +3,14 @@
 #include <map>
 using namespace std;
 
+// map of string identifier to a node
 class Node
 {
 public:
    string identifier;
-   string extraInfo;
-   map<string, int> edgeWeights;
-   vector<Node> referencedBy;
-   double rank;
+   vector<Node> referencedBy; // list of all nodes that point to it
+   double prevRank;
+   double curRank;
    int inDegree;
    double outDegree;
 
