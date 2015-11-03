@@ -19,7 +19,7 @@ public:
    // Addes a node to this nodes list of "referenced by" nodes
    void addReferencedByNode(Node *otherNode)
    {
-      if(referencedBy.count(otherNode->identifier) != 0)
+      if(referencedBy.count(otherNode->identifier) == 0)
       {
          this->referencedBy[otherNode->identifier] = otherNode;
          this->inDegree++;
