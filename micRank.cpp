@@ -19,7 +19,7 @@ using namespace SNAPReader;
 int main(int argc, char **argv)
 {
     string fileName = string(argv[1]);
-    GraphUtils:: NodeGraph *graph;
+    GraphUtils::NodeGraph *graph;
 
    	//Check the filename to see if its SNAP or CSV
    	if(fileName.substr(fileName.find_last_of(".") + 1) == "csv")
