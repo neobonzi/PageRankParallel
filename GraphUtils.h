@@ -20,8 +20,8 @@ void printNodeGraph(NodeGraph *graph)
     {
         string k = iter->first;
         Node *node = iter->second;
-        
-        cout << "Node: " << k << " Out " << node->outDegree << " In " << node->inDegree << endl;
+        cout << "Node: " << iter->first;
+        cout << " Out " << node->outDegree << " In " << node->inDegree << endl;
         
         for(map<string, Node *>::iterator refIter = node->referencedBy.begin(); refIter != node->referencedBy.end(); ++refIter)
         {
