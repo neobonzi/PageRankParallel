@@ -1,3 +1,4 @@
 micrank
 cudarank
 *.swp
+.DS_STORE
