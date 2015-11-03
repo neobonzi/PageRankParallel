@@ -7,19 +7,30 @@ using namespace std;
 class Node
 {
 public:
+   map<string, Node *> referencedBy;
    string identifier;
-   vector<Node> referencedBy; // list of all nodes that point to it
    double prevRank;
    double curRank;
    int inDegree;
-   double outDegree;
+   int outDegree;
 
    Node(string id) : identifier(id), inDegree(0), outDegree(0) {}
+   
+   // Addes a node to this nodes list of "referenced by" nodes
+   void addReferencedByNode(Node *otherNode)
+   {
+      if(referencedBy.count(otherNode->identifier) != 0)
+      {
+         this->referencedBy[otherNode->identifier] = otherNode;
+         this->inDegree++;
+         otherNode->outDegree++;
+      }
+   }
 
    int compareTo(Node other)
    {
-      if (rank < other.rank) return -1;
-      else if (rank == other.rank) return 0;
+      if (curRank < other.curRank) return -1;
+      else if (curRank == other.curRank) return 0;
       else return 1;
    }
 };
