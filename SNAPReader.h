@@ -1,5 +1,5 @@
-#ifndef CSV_READER_H_
-#define CSV_READER_H_
+#ifndef SNAP_READER_H_
+#define SNAP_READER_H_
 #include <vector>
 #include <string>
 #include <map>
@@ -7,12 +7,13 @@
 
 using namespace std;
 
-namespace CSVReader
+namespace SNAPReader
 {
 
-#define CSV_DELIMITER ","
+#define SNAP_DELIMITER "\t"
+#define SNAP_COMMENT '#'
 
-GraphUtils::NodeGraph *readCSVData(string fileName)
+GraphUtils::NodeGraph *readSNAPData(string fileName)
 {
     ifstream dataFile;
     string line;
@@ -23,7 +24,13 @@ GraphUtils::NodeGraph *readCSVData(string fileName)
     {
         while(getline(dataFile, line))
         {
-            int delimIndex = line.find(CSV_DELIMITER);
+            //Check or comment
+            if (line[0] == SNAP_COMMENT)
+            {
+                continue;
+            }
+
+            int delimIndex = line.find(SNAP_DELIMITER);
             string nodeID1, nodeID2;
             
             nodeID1.assign(line.substr(0, delimIndex));
@@ -39,11 +46,7 @@ GraphUtils::NodeGraph *readCSVData(string fileName)
                 node1 = new Node(nodeID1);
                 (*graph)[nodeID1] = node1;
             }
-            
-            // Skip
-            line = line.substr(delimIndex + 1);
-            delimIndex = line.find(CSV_DELIMITER);
-           
+
             // Get neighbor 
             line = line.substr(delimIndex + 1);
             delimIndex = line.find(CSV_DELIMITER);

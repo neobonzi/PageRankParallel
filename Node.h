@@ -1,3 +1,5 @@
+#ifndef NODE_H_
+#define NODE_H_
 #include <vector>
 #include <string>
 #include <map>
@@ -34,3 +36,4 @@ public:
       else return 1;
    }
 };
+#endif
