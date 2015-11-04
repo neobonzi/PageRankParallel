@@ -14,7 +14,7 @@ namespace SNAPReader
 #define SNAP_DELIMITER "\t"
 #define SNAP_COMMENT '#'
 
-GraphUtils::NodeGraph *readSNAPData(string fileName)
+GraphUtils::NodeGraph *readSNAPData(char *fileName)
 {
     int id_num = 0;
     ifstream dataFile;

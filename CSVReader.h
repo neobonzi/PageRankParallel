@@ -12,7 +12,7 @@ namespace CSVReader
 
 #define CSV_DELIMITER ","
 
-GraphUtils::NodeGraph *readCSVData(string fileName)
+GraphUtils::NodeGraph *readCSVData(char *fileName)
 {
     int id_num = 0;
     ifstream dataFile;
