@@ -10,12 +10,14 @@
 #include "GraphUtils.h"
 #include "CSVReader.h"
 #include "SNAPReader.h"
+#include "PageRankUtils.h"
 
 #define CSV_DELIMITER ","
 
 using namespace std;
 using namespace CSVReader;
 using namespace SNAPReader;
+using namespace PageRankUtils;
 
 int main(int argc, char **argv)
 {

@@ -31,6 +31,12 @@ public:
       }
    }
 
+   void updatePrestige(double newPrestige)
+   {
+       this->prevRank = this->curRank;
+       this->curRank = newPrestige;
+   }
+
    int compareTo(Node other)
    {
       if (curRank < other.curRank) return -1;
