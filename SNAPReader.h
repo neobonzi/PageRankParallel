@@ -1,5 +1,6 @@
 #ifndef SNAP_READER_H_
 #define SNAP_READER_H_
+#include <stdlib.h>
 #include <vector>
 #include <string>
 #include <map>
@@ -15,6 +16,7 @@ namespace SNAPReader
 
 GraphUtils::NodeGraph *readSNAPData(string fileName)
 {
+    int id_num = 0;
     ifstream dataFile;
     string line;
     dataFile.open(fileName);
@@ -43,7 +45,7 @@ GraphUtils::NodeGraph *readSNAPData(string fileName)
             }
             else
             {   
-                node1 = new Node(nodeID1);
+                node1 = new Node(nodeID1, id_num++);
                 (*graph)[nodeID1] = node1;
             }
 
@@ -61,7 +63,7 @@ GraphUtils::NodeGraph *readSNAPData(string fileName)
             }
             else
             {
-                node2 = new Node(nodeID2);
+                node2 = new Node(nodeID2, id_num++);
                 (*graph)[nodeID2] = node2;
             }
             
@@ -72,6 +74,10 @@ GraphUtils::NodeGraph *readSNAPData(string fileName)
         }
 
         dataFile.close();
+    }
+    else {
+      perror("SNAPReader");
+      exit(-1);
     }
     return graph;
 }

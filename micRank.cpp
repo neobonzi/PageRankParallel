@@ -24,13 +24,17 @@ int main(int argc, char **argv)
    	//Check the filename to see if its SNAP or CSV
    	if(fileName.substr(fileName.find_last_of(".") + 1) == "csv")
    	{
-    	graph = readCSVData(fileName);
+    	    graph = readCSVData(fileName);
    	}
    	else
    	{
    		graph = readSNAPData(fileName);
    	}
 
-    GraphUtils::printNodeGraph(graph);
+    //GraphUtils::printNodeGraph(graph);
+    GraphUtils::NodeMatrix *matrix = GraphUtils::listToMatrix(graph);
+    //matrix->print();
+    GraphUtils::verifyMatrix(graph, matrix);
+   
 }
 

@@ -14,6 +14,7 @@ namespace CSVReader
 
 GraphUtils::NodeGraph *readCSVData(string fileName)
 {
+    int id_num = 0;
     ifstream dataFile;
     string line;
     dataFile.open(fileName);
@@ -36,7 +37,7 @@ GraphUtils::NodeGraph *readCSVData(string fileName)
             }
             else
             {   
-                node1 = new Node(nodeID1);
+                node1 = new Node(nodeID1, id_num++);
                 (*graph)[nodeID1] = node1;
             }
             
@@ -58,7 +59,7 @@ GraphUtils::NodeGraph *readCSVData(string fileName)
             }
             else
             {
-                node2 = new Node(nodeID2);
+                node2 = new Node(nodeID2, id_num++);
                 (*graph)[nodeID2] = node2;
             }
             
@@ -69,6 +70,10 @@ GraphUtils::NodeGraph *readCSVData(string fileName)
         }
 
         dataFile.close();
+    }
+    else {
+      perror("CSVReader");
+      exit(-1);
     }
     return graph;
 }

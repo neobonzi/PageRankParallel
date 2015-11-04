@@ -10,13 +10,15 @@ class Node
 {
 public:
    map<string, Node *> referencedBy;
+   int id_num;
    string identifier;
    double prevRank;
    double curRank;
    int inDegree;
    int outDegree;
 
-   Node(string id) : identifier(id), inDegree(0), outDegree(0) {}
+   Node(string id, int id_num) : identifier(id), id_num(id_num),
+                                 inDegree(0), outDegree(0) {}
    
    // Addes a node to this nodes list of "referenced by" nodes
    void addReferencedByNode(Node *otherNode)
