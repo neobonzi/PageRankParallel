@@ -4,6 +4,6 @@
 
 // Runs the page rank algorithm on the given NodeMatrix and
 // prints out the results.
-void pageRank(GraphUtils::NodeMatrix matrix);
+void pageRank(GraphUtils::NodeGraph *graph);
 
 #endif

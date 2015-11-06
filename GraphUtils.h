@@ -26,12 +26,13 @@ typedef map<string, Node *> NodeGraph;
 // assuming a square matrix of size (size).
 #define row_major(row, col, size) (row)*(size)+(col)
 
+//Ex: GraphUtils::NodeMatrix *matrix = GraphUtils::listToMatrix(graph);
 class NodeMatrix {
    public:
-      vector<int> matrix;
+      vector<double> matrix;
       int width;
 
-      NodeMatrix(int w) : width(w), matrix(w*w, 0) {}
+      NodeMatrix(int w, double initial_value) : width(w), matrix(w*w, initial_value) {}
 
       void print() {
          for (int r = 0; r < width; r++) {
@@ -46,7 +47,7 @@ class NodeMatrix {
 // Converts a NodeGraph stored as an adjacency list to NodeMatrix stored as an
 // adjacency matrix.
 NodeMatrix *listToMatrix(NodeGraph *node_graph) {
-   NodeMatrix *node_matrix = new NodeMatrix(node_graph->size());
+   NodeMatrix *node_matrix = new NodeMatrix(node_graph->size(), 1/(double)node_graph->size());
    for (NodeGraph::iterator graphIt = node_graph->begin();
         graphIt!= node_graph->end();
         ++graphIt)
@@ -60,13 +61,19 @@ NodeMatrix *listToMatrix(NodeGraph *node_graph) {
          // node_A points to node_B
          node_matrix->matrix[INDEX(node_A->id_num /* row */,
                                    node_B->id_num /* col */,
-                                   node_matrix->width)] = 1;
+                                   node_matrix->width)] += 1/(double)node->outDegree;
       }
    }
    return node_matrix;       
 }
 
+vector<double> matrixToPrestige(NodeMatrix *node_matrix) {
+    vector<double> prestige = new vector<double>(node_matrix->width, 1/(double)node_matrix->width);
+    return prestige;
+}
+
 // verifies that node_matrix is equivalent to the specified node_graph.
+/*
 void verifyMatrix(NodeGraph *node_graph, NodeMatrix *node_matrix) {
    for (NodeGraph::iterator graphIt = node_graph->begin();
         graphIt!= node_graph->end();
@@ -79,8 +86,8 @@ void verifyMatrix(NodeGraph *node_graph, NodeMatrix *node_matrix) {
       {
          Node *node_B = refIt->second;
          // node_A points to node_B
-         if (!node_matrix->matrix[INDEX(node_A->id_num /* row */,
-                                        node_B->id_num /* col */,
+         if (!node_matrix->matrix[INDEX(node_A->id_num,
+                                        node_B->id_num,
                                         node_matrix->width)]) {
             cout << "INVALID MATRIX\n";
             return;
@@ -89,7 +96,7 @@ void verifyMatrix(NodeGraph *node_graph, NodeMatrix *node_matrix) {
    }
    cout << "Valid matrix.\n";
 }
-
+*/
 
 void printNodeGraph(NodeGraph *graph)
 {

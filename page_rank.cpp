@@ -34,13 +34,13 @@ int main(int argc, char **argv)
       graph = readSNAPData(argv[1]);
    }
 
-   GraphUtils::NodeMatrix *matrix = GraphUtils::listToMatrix(graph);
    // pageRank function call
    // We can use the same function header for all of the implementations
    // of pageRank and then just link in the appropriate cpp files at compile
    // time so we can have the same main function for all of them.
    // for nvcc I included the --x flag to force the .cpp file to be compiled
    // as a cuda file.
+   page_rank(graph);
    return 0;
 }
 
