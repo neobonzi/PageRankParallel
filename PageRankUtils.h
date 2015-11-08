@@ -22,7 +22,7 @@ void updatePrestige(int nodeIndex, vector<Node *> prestiges, GraphUtils::NodeMat
     double prestige = 0;
     Node *node = prestiges[nodeIndex];
 
-    for (int row = 0; row < matrix->width; row++)
+    for (int row = 0; row < nodeMatrix->width; row++)
     {
         prestige += prestiges[row]->curRank * nodeMatrix->matrix[INDEX(row, nodeIndex, nodeMatrix->width)];
     }

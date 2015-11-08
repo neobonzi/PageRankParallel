@@ -29,10 +29,11 @@ typedef map<string, Node *> NodeGraph;
 //Ex: GraphUtils::NodeMatrix *matrix = GraphUtils::listToMatrix(graph);
 class NodeMatrix {
    public:
-      vector<double> matrix;
+      vector<float> matrix;
+      vector<Node *> nodes;
       int width;
 
-      NodeMatrix(int w, double initial_value) : width(w), matrix(w*w, initial_value) {}
+      NodeMatrix(int w, float initial_value) : width(w), matrix(w*w, initial_value) {}
 
       void print() {
          for (int r = 0; r < width; r++) {
@@ -47,56 +48,46 @@ class NodeMatrix {
 // Converts a NodeGraph stored as an adjacency list to NodeMatrix stored as an
 // adjacency matrix.
 NodeMatrix *listToMatrix(NodeGraph *node_graph) {
-   NodeMatrix *node_matrix = new NodeMatrix(node_graph->size(), 1/(double)node_graph->size());
+   NodeMatrix *node_matrix = new NodeMatrix(node_graph->size(),
+                                            1/(float)node_graph->size());
    for (NodeGraph::iterator graphIt = node_graph->begin();
         graphIt!= node_graph->end();
         ++graphIt)
    {
       Node *node_A = graphIt->second;
+      node_matrix->nodes.push_back(node_A);
       for(map<string, Node *>::iterator refIt = node_A->referencedBy.begin();
           refIt != node_A->referencedBy.end();
           ++refIt)
       {
          Node *node_B = refIt->second;
          // node_A points to node_B
-         node_matrix->matrix[INDEX(node_A->id_num /* row */,
-                                   node_B->id_num /* col */,
-                                   node_matrix->width)] += 1/(double)node->outDegree;
+         node_matrix->matrix
+            [INDEX(node_A->id_num /* row */,
+                   node_B->id_num /* col */,
+                   node_matrix->width)] += 1/(float)node_A->outDegree;
       }
    }
    return node_matrix;       
 }
 
-vector<double> matrixToPrestige(NodeMatrix *node_matrix) {
-    vector<double> prestige = new vector<double>(node_matrix->width, 1/(double)node_matrix->width);
-    return prestige;
-}
+// Must free the data after you're done using it.
+float* matrixToPrestige(NodeMatrix *node_matrix) {
+   const int width = node_matrix->width;
+   float init_val = 1/(float)width;
+   float *prestige = (float *) malloc(width*width*sizeof(float));
 
-// verifies that node_matrix is equivalent to the specified node_graph.
-/*
-void verifyMatrix(NodeGraph *node_graph, NodeMatrix *node_matrix) {
-   for (NodeGraph::iterator graphIt = node_graph->begin();
-        graphIt!= node_graph->end();
-        ++graphIt)
-   {
-      Node *node_A = graphIt->second;
-      for(map<string, Node *>::iterator refIt = node_A->referencedBy.begin();
-          refIt != node_A->referencedBy.end();
-          ++refIt)
-      {
-         Node *node_B = refIt->second;
-         // node_A points to node_B
-         if (!node_matrix->matrix[INDEX(node_A->id_num,
-                                        node_B->id_num,
-                                        node_matrix->width)]) {
-            cout << "INVALID MATRIX\n";
-            return;
-         }
-      }
+   if (prestige == NULL) {
+      perror("malloc");
+      exit(-1);
    }
-   cout << "Valid matrix.\n";
+
+   for (int i = 0 ; i < width; i++) {
+      prestige[i] = init_val;
+   }
+
+   return prestige;
 }
-*/
 
 void printNodeGraph(NodeGraph *graph)
 {

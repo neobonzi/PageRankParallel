@@ -40,7 +40,7 @@ int main(int argc, char **argv)
    // time so we can have the same main function for all of them.
    // for nvcc I included the --x flag to force the .cpp file to be compiled
    // as a cuda file.
-   page_rank(graph);
+   pageRank(graph);
    return 0;
 }
 

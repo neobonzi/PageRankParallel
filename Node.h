@@ -43,5 +43,12 @@ public:
       else if (curRank == other.curRank) return 0;
       else return 1;
    }
+
+   friend class CompareByRank;
+   class CompareByRank {
+      bool operator()(const Node *a, const Node *b) {
+         return a->curRank < b->curRank;
+      }
+   };
 };
 #endif
