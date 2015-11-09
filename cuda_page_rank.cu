@@ -1,4 +1,5 @@
 #include "PageRank.h"
+//#include "GraphUtils.h"
 #include <algorithm>
 #include <cuda_runtime.h>
 #include <cublas_v2.h>
@@ -159,14 +160,14 @@ void updateNodePrestige(vector<Node *> nodes, float *prestige) {
 void pageRank(GraphUtils::NodeGraph *graph) {
    GraphUtils::NodeMatrix *matrix = GraphUtils::listToMatrix(graph);
    const int width = matrix->width;
-   float *prestige= GraphUtils::matrixToPrestige(matrix);
+   float *prestige = GraphUtils::matrixToPrestige(matrix);
    
    const int iterations = 30000;
    //bool converge = false; // TODO: get it working with converge
 
    // while not converge
    for (int i = 0; i < iterations; i++) {
-      PageRankOnDevice(matrix->matrix->data(), width, width,
+      PageRankOnDevice(matrix->matrix, width, width,
                        prestige, width, 1);
       // update converge
    }
