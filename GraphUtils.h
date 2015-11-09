@@ -29,11 +29,17 @@ typedef map<string, Node *> NodeGraph;
 //Ex: GraphUtils::NodeMatrix *matrix = GraphUtils::listToMatrix(graph);
 class NodeMatrix {
    public:
-      vector<float> matrix;
+      float *matrix;
       vector<Node *> nodes;
       int width;
 
-      NodeMatrix(int w, float initial_value) : width(w), matrix(w*w, initial_value) {}
+      NodeMatrix(int w, float initial_value) : width(w) 
+      {
+          matrix = (float *)malloc(w * w * sizeof(float))
+          for (int i = 0; i < w*w; i++) {
+             matrix[i] = initial_value; 
+          }
+      }
 
       void print() {
          for (int r = 0; r < width; r++) {
@@ -75,7 +81,7 @@ NodeMatrix *listToMatrix(NodeGraph *node_graph) {
 float* matrixToPrestige(NodeMatrix *node_matrix) {
    const int width = node_matrix->width;
    float init_val = 1/(float)width;
-   float *prestige = (float *) malloc(width*width*sizeof(float));
+   float *prestige = (float *) malloc(width*sizeof(float));
 
    if (prestige == NULL) {
       perror("malloc");
