@@ -46,6 +46,7 @@ public:
 
    friend class CompareByRank;
    class CompareByRank {
+      public:
       bool operator()(const Node *a, const Node *b) {
          return a->curRank < b->curRank;
       }
