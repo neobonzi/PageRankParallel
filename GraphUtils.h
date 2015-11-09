@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <iterator>
-
+#include <cstdio>
 #include "Node.h"
 
 using namespace std;
