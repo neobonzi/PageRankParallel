@@ -87,12 +87,12 @@ void *check_malloc(size_t size) {
    return ptr;
 }
 
-__global__ void AddRandomness(float *prestige, int vertices) {
+__global__ void AddRandomness(double *prestige, int vertices) {
    int ndx = blockIdx.x*blockDim.x + threadIdx.x;
    if (ndx < vertices)
-      prestige[ndx] = D*prestige[ndx] + (1-D)/(float)vertices;
+      prestige[ndx] = D*prestige[ndx] + (1-D)/(double)vertices;
 }
-__global__ void UpdateMatrix(float *matrix, float *prestige, int width) {
+__global__ void UpdateMatrix(double *matrix, double *prestige, int width) {
    int row = blockIdx.y*TILEWIDTH + threadIdx.y;
    int col = blockIdx.x*TILEWIDTH + threadIdx.x;
    if (row < width && col < width) {
@@ -100,14 +100,14 @@ __global__ void UpdateMatrix(float *matrix, float *prestige, int width) {
    }
 }
 
-void PageRankOnDevice(float *matrix, int rows_matrix, int cols_matrix,
-                      float *N, int rows_N, int cols_N) {
-   float *matrixd, *Nd, *Pd;
+void PageRankOnDevice(double *matrix, int rows_matrix, int cols_matrix,
+                      double *N, int rows_N, int cols_N) {
+   double *matrixd, *Nd, *Pd;
    // Allocate memory.
-   int size_matrix = rows_matrix*cols_matrix*sizeof(float);
+   int size_matrix = rows_matrix*cols_matrix*sizeof(double);
    HANDLE_ERROR(cudaMalloc(&matrixd, size_matrix));
    HANDLE_ERROR(cudaMemcpy(matrixd, matrix, size_matrix, cudaMemcpyHostToDevice));
-   int size_N = rows_N*cols_N*sizeof(float);
+   int size_N = rows_N*cols_N*sizeof(double);
    HANDLE_ERROR(cudaMalloc(&Nd, size_N));
    HANDLE_ERROR(cudaMemcpy(Nd, N, size_N, cudaMemcpyHostToDevice));
    HANDLE_ERROR(cudaMalloc(&Pd, size_N));
@@ -118,9 +118,9 @@ void PageRankOnDevice(float *matrix, int rows_matrix, int cols_matrix,
    //dim3 grid(cols_P/32.0, rows_P/32.0);
    cublasHandle_t handle;
    HANDLE_CUBLAS_ERROR(cublasCreate(&handle));
-   const float alpha = 1.0f;
-   const float beta = 0.0f;
-   HANDLE_CUBLAS_ERROR(cublasSgemm(handle,
+   const double alpha = 1.0f;
+   const double beta = 0.0f;
+   HANDLE_CUBLAS_ERROR(cublasDgemm(handle,
                        CUBLAS_OP_N, CUBLAS_OP_N,
                        rows_matrix, cols_N, cols_matrix,
                        &alpha,
@@ -135,8 +135,8 @@ void PageRankOnDevice(float *matrix, int rows_matrix, int cols_matrix,
    AddRandomness<<<r_grid, r_block>>>(Pd, rows_N);
 
    // Launch kernel to update matrix
-   int grid_width = ceil(cols_matrix/(float)TILEWIDTH);
-   int grid_len = ceil(rows_matrix/(float)TILEWIDTH);
+   int grid_width = ceil(cols_matrix/(double)TILEWIDTH);
+   int grid_len = ceil(rows_matrix/(double)TILEWIDTH);
    dim3 u_grid(grid_width, grid_len);
    dim3 u_block(TILEWIDTH, TILEWIDTH);
    UpdateMatrix<<<u_grid, u_block>>>(matrixd, Pd, rows_N);
@@ -151,7 +151,7 @@ void PageRankOnDevice(float *matrix, int rows_matrix, int cols_matrix,
    HANDLE_ERROR(cudaFree(Pd));
 }
 
-void updateNodePrestige(vector<Node *> nodes, float *prestige) {
+void updateNodePrestige(vector<Node *> nodes, double *prestige) {
    for (int i = 0; i < nodes.size(); i++) {
       nodes[i]->updatePrestige(prestige[i]);
    }
@@ -160,7 +160,7 @@ void updateNodePrestige(vector<Node *> nodes, float *prestige) {
 void pageRank(GraphUtils::NodeGraph *graph) {
    GraphUtils::NodeMatrix *matrix = GraphUtils::listToMatrix(graph);
    const int width = matrix->width;
-   float *prestige = GraphUtils::matrixToPrestige(matrix);
+   double *prestige = GraphUtils::matrixToPrestige(matrix);
    
    const int iterations = 6;
    //bool converge = false; // TODO: get it working with converge

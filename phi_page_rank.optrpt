@@ -1,0 +1,59 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+
+Begin optimization report for: pageRank(GraphUtils::NodeGraph *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (pageRank(GraphUtils::NodeGraph *)) [1] phi_page_rank.cpp(11,1)
+  -> EXTERN: (12,26) GraphUtils::listToMatrix(GraphUtils::NodeGraph *)
+  -> EXTERN: (14,24) GraphUtils::matrixToPrestige(GraphUtils::NodeMatrix *)
+  -> EXTERN: (22,38) MKL_malloc(size_t, int)
+  -> EXTERN: (26,9) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (29,13) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (31,9) cblas_dgemm(CBLAS_LAYOUT, CBLAS_TRANSPOSE, CBLAS_TRANSPOSE, int, int, int, double, const double *, int, const double *, int, double, double *, int)
+  -> EXTERN: (35,9) memcpy(void *, const void *, size_t)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at phi_page_rank.cpp(24,5)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:fprintf(FILE *, const char  line 26 and call:memcpy(void *, const void * line 35
+
+   LOOP BEGIN at phi_page_rank.cpp(27,9)
+      remark #15527: loop was not vectorized: function call to fprintf(FILE *, const char *, ...) cannot be vectorized   [ phi_page_rank.cpp(29,13) ]
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+phi_page_rank.cpp(35,9):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+phi_page_rank.cpp(35,9):remark #34014: optimization advice for memcpy: increase the source's alignment to 16 (and use __assume_aligned) to speed up library implementation
+phi_page_rank.cpp(35,9):remark #34026: call to memcpy implemented as a call to optimized library version
+===========================================================================
+
+Begin optimization report for: __sti__$E()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (__sti__$E()) [2] <compiler generated>
+  -> EXTERN: /usr/include/c++/4.4.7/iostream:(72,25) __cxa_atexit()
+  -> EXTERN: /usr/include/c++/4.4.7/iostream:(72,25) std::ios_base::Init::Init(std::ios_base::Init *)
+
+===========================================================================

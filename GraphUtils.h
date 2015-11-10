@@ -30,33 +30,19 @@ typedef map<string, Node *> NodeGraph;
 //Ex: GraphUtils::NodeMatrix *matrix = GraphUtils::listToMatrix(graph);
 class NodeMatrix {
    public:
-      float *matrix;
+      double *matrix;
       vector<Node *> nodes;
       int width;
 
-      NodeMatrix(int w, float initial_value) : width(w) 
-      {
-          matrix = (float *)malloc(w * w * sizeof(float));
-          for (int i = 0; i < w*w; i++) {
-             matrix[i] = initial_value; 
-          }
-      }
-
-      void print() {
-         for (int r = 0; r < width; r++) {
-            for (int c = 0; c < width; c++) {
-               cout << matrix[INDEX(r, c, width)] << " ";
-            }
-            cout << endl;
-         }
-      }
+      NodeMatrix(int w, double initial_value); 
+      void print(); 
 };
 
 // Converts a NodeGraph stored as an adjacency list to NodeMatrix stored as an
 // adjacency matrix.
 NodeMatrix *listToMatrix(NodeGraph *node_graph);
 // Must free the data after you're done using it.
-float* matrixToPrestige(NodeMatrix *node_matrix);
+double* matrixToPrestige(NodeMatrix *node_matrix);
 void printNodeGraph(NodeGraph *graph);
 }  // namespace GraphUtils
 #endif

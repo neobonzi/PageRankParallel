@@ -1,0 +1,998 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+
+Begin optimization report for: __gthread_active_p()
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gthread_active_p()) /usr/include/c++/4.4.7/x86_64-redhat-linux/bits/gthr-default.h(239,1)
+
+===========================================================================
+
+Begin optimization report for: operator new(size_t, void *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (operator new(size_t, void *)) /usr/include/c++/4.4.7/new(101,59)
+
+===========================================================================
+
+Begin optimization report for: operator delete(void *, void *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (operator delete(void *, void *)) /usr/include/c++/4.4.7/new(105,54)
+
+===========================================================================
+
+Begin optimization report for: std::ctype<char>::widen(const std::ctype<char> *, char) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::ctype<char>::widen(const std::ctype<char> *, char) const) /usr/include/c++/4.4.7/bits/locale_facets.h(866,7)
+
+===========================================================================
+
+Begin optimization report for: std::_Destroy_aux<true>::__destroy<std::allocator<Node *>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Destroy_aux<true>::__destroy<std::allocator<Node *>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer)) /usr/include/c++/4.4.7/bits/stl_construct.h(109,55)
+
+===========================================================================
+
+Begin optimization report for: std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::begin(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::begin(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)) /usr/include/c++/4.4.7/bits/stl_tree.h(626,7)
+
+===========================================================================
+
+Begin optimization report for: std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::end(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::end(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)) /usr/include/c++/4.4.7/bits/stl_tree.h(640,7)
+
+===========================================================================
+
+Begin optimization report for: std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::size(const std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::size(const std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *) const) /usr/include/c++/4.4.7/bits/stl_tree.h(671,7)
+
+===========================================================================
+
+Begin optimization report for: std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::begin(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::begin(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)) /usr/include/c++/4.4.7/bits/stl_map.h(307,7)
+
+===========================================================================
+
+Begin optimization report for: std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::end(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::end(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)) /usr/include/c++/4.4.7/bits/stl_map.h(325,7)
+
+===========================================================================
+
+Begin optimization report for: std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::size(const std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::size(const std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *) const) /usr/include/c++/4.4.7/bits/stl_map.h(421,7)
+
+===========================================================================
+
+Begin optimization report for: std::allocator<Node *>::allocator(std::allocator<Node *> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::allocator<Node *>::allocator(std::allocator<Node *> *)) /usr/include/c++/4.4.7/bits/allocator.h(101,27)
+
+===========================================================================
+
+Begin optimization report for: std::_Vector_base<Node *, std::allocator<Node *>>::_M_get_Tp_allocator(const std::_Vector_base<Node *, std::allocator<Node *>> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Vector_base<Node *, std::allocator<Node *>>::_M_get_Tp_allocator(const std::_Vector_base<Node *, std::allocator<Node *>> *) const) /usr/include/c++/4.4.7/bits/stl_vector.h(98,7)
+
+===========================================================================
+
+Begin optimization report for: std::_Vector_base<Node *, std::allocator<Node *>>::_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Vector_base<Node *, std::allocator<Node *>>::_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *)) /usr/include/c++/4.4.7/bits/stl_vector.h(105,19)
+
+===========================================================================
+
+Begin optimization report for: std::_Vector_base<Node *, std::allocator<Node *>>::_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Vector_base<Node *, std::allocator<Node *>>::_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *const)) /usr/include/c++/4.4.7/bits/stl_vector.h(104,7)
+
+===========================================================================
+
+Begin optimization report for: std::_Vector_base<Node *, std::allocator<Node *>>::~_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Vector_base<Node *, std::allocator<Node *>>::~_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *)) /usr/include/c++/4.4.7/bits/stl_vector.h(132,7)
+
+===========================================================================
+
+Begin optimization report for: std::_Vector_base<Node *, std::allocator<Node *>>::_M_allocate(std::_Vector_base<Node *, std::allocator<Node *>> *, size_t)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Vector_base<Node *, std::allocator<Node *>>::_M_allocate(std::_Vector_base<Node *, std::allocator<Node *>> *, size_t)) /usr/include/c++/4.4.7/bits/stl_vector.h(140,7)
+
+===========================================================================
+
+Begin optimization report for: std::_Vector_base<Node *, std::allocator<Node *>>::_Vector_impl::_Vector_impl(std::_Vector_base<Node *, std::allocator<Node *>>::_Vector_impl *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Vector_base<Node *, std::allocator<Node *>>::_Vector_impl::_Vector_impl(std::_Vector_base<Node *, std::allocator<Node *>>::_Vector_impl *)) /usr/include/c++/4.4.7/bits/stl_vector.h(82,2)
+
+===========================================================================
+
+Begin optimization report for: std::vector<Node *, std::allocator<Node *>>::begin(std::vector<Node *, std::allocator<Node *>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::vector<Node *, std::allocator<Node *>>::begin(std::vector<Node *, std::allocator<Node *>> *)) /usr/include/c++/4.4.7/bits/stl_vector.h(426,7)
+
+===========================================================================
+
+Begin optimization report for: std::vector<Node *, std::allocator<Node *>>::end(std::vector<Node *, std::allocator<Node *>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::vector<Node *, std::allocator<Node *>>::end(std::vector<Node *, std::allocator<Node *>> *)) /usr/include/c++/4.4.7/bits/stl_vector.h(444,7)
+
+===========================================================================
+
+Begin optimization report for: std::vector<Node *, std::allocator<Node *>>::size(const std::vector<Node *, std::allocator<Node *>> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::vector<Node *, std::allocator<Node *>>::size(const std::vector<Node *, std::allocator<Node *>> *) const) /usr/include/c++/4.4.7/bits/stl_vector.h(533,7)
+
+===========================================================================
+
+Begin optimization report for: std::vector<Node *, std::allocator<Node *>>::push_back(std::vector<Node *, std::allocator<Node *>> *, const std::vector<Node *, std::allocator<Node *>>::value_type &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::vector<Node *, std::allocator<Node *>>::push_back(std::vector<Node *, std::allocator<Node *>> *, const std::vector<Node *, std::allocator<Node *>>::value_type &)) /usr/include/c++/4.4.7/bits/stl_vector.h(734,7)
+
+===========================================================================
+
+Begin optimization report for: std::vector<Node *, std::allocator<Node *>>::_M_insert_aux(std::vector<Node *, std::allocator<Node *>> *, std::vector<Node *, std::allocator<Node *>>::iterator, const std::vector<Node *, std::allocator<Node *>>::value_type &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::vector<Node *, std::allocator<Node *>>::_M_insert_aux(std::vector<Node *, std::allocator<Node *>> *, std::vector<Node *, std::allocator<Node *>>::iterator, const std::vector<Node *, std::allocator<Node *>>::value_type &)) /usr/include/c++/4.4.7/bits/vector.tcc(298,5)
+
+===========================================================================
+
+Begin optimization report for: std::vector<Node *, std::allocator<Node *>>::_M_check_len(const std::vector<Node *, std::allocator<Node *>> *, std::vector<Node *, std::allocator<Node *>>::size_type, const char *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::vector<Node *, std::allocator<Node *>>::_M_check_len(const std::vector<Node *, std::allocator<Node *>> *, std::vector<Node *, std::allocator<Node *>>::size_type, const char *) const) /usr/include/c++/4.4.7/bits/stl_vector.h(1135,7)
+
+===========================================================================
+
+Begin optimization report for: std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)) /usr/include/c++/4.4.7/bits/stl_tree.h(171,22)
+
+===========================================================================
+
+Begin optimization report for: std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator->(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator->(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *) const) /usr/include/c++/4.4.7/bits/stl_tree.h(179,7)
+
+===========================================================================
+
+Begin optimization report for: std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator++(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator++(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *)) /usr/include/c++/4.4.7/bits/stl_tree.h(183,7)
+
+===========================================================================
+
+Begin optimization report for: std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator!=(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Self &) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator!=(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Self &) const) /usr/include/c++/4.4.7/bits/stl_tree.h(217,7)
+
+===========================================================================
+
+Begin optimization report for: std::__miter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__miter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)) /usr/include/c++/4.4.7/bits/stl_algobase.h(288,7)
+
+===========================================================================
+
+Begin optimization report for: std::__niter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__niter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)) /usr/include/c++/4.4.7/bits/stl_algobase.h(270,7)
+
+===========================================================================
+
+Begin optimization report for: std::__copy_move_backward<false, true, std::iterator_traits<std::allocator<Node *>::pointer>::iterator_category>::__copy_move_b<Node *>(Node *const *, Node *const *, Node **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__copy_move_backward<false, true, std::iterator_traits<std::allocator<Node *>::pointer>::iterator_category>::__copy_move_b<Node *>(Node *const *, Node *const *, Node **)) /usr/include/c++/4.4.7/bits/stl_algobase.h(573,9)
+
+===========================================================================
+
+Begin optimization report for: std::__copy_move<false, true, std::iterator_traits<std::allocator<Node *>::pointer>::iterator_category>::__copy_m<Node *>(Node *const *, Node *const *, Node **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__copy_move<false, true, std::iterator_traits<std::allocator<Node *>::pointer>::iterator_category>::__copy_m<Node *>(Node *const *, Node *const *, Node **)) /usr/include/c++/4.4.7/bits/stl_algobase.h(377,9)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::new_allocator<char>::new_allocator(__gnu_cxx::new_allocator<char> *, const __gnu_cxx::new_allocator<char> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::new_allocator<char>::new_allocator(__gnu_cxx::new_allocator<char> *, const __gnu_cxx::new_allocator<char> &)) /usr/include/c++/4.4.7/ext/new_allocator.h(68,51)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::new_allocator<char>::new_allocator(__gnu_cxx::new_allocator<char> *const, const __gnu_cxx::new_allocator<char> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::new_allocator<char>::new_allocator(__gnu_cxx::new_allocator<char> *const, const __gnu_cxx::new_allocator<char> &)) /usr/include/c++/4.4.7/ext/new_allocator.h(68,7)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::new_allocator<Node *>::new_allocator(__gnu_cxx::new_allocator<Node *> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::new_allocator<Node *>::new_allocator(__gnu_cxx::new_allocator<Node *> *)) /usr/include/c++/4.4.7/ext/new_allocator.h(66,31)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::new_allocator<Node *>::new_allocator(__gnu_cxx::new_allocator<Node *> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::new_allocator<Node *>::new_allocator(__gnu_cxx::new_allocator<Node *> *const)) /usr/include/c++/4.4.7/ext/new_allocator.h(66,7)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::new_allocator<Node *>::allocate(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::size_type, const void *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::new_allocator<Node *>::allocate(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::size_type, const void *)) /usr/include/c++/4.4.7/ext/new_allocator.h(85,7)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::new_allocator<Node *>::deallocate(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer, __gnu_cxx::new_allocator<Node *>::size_type)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::new_allocator<Node *>::deallocate(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer, __gnu_cxx::new_allocator<Node *>::size_type)) /usr/include/c++/4.4.7/ext/new_allocator.h(95,7)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::new_allocator<Node *>::construct(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer, Node *const &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::new_allocator<Node *>::construct(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer, Node *const &)) /usr/include/c++/4.4.7/ext/new_allocator.h(105,7)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::__normal_iterator(__gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *, const std::vector<Node *, std::allocator<Node *>>::pointer &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::__normal_iterator(__gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *, const std::vector<Node *, std::allocator<Node *>>::pointer &)) /usr/include/c++/4.4.7/bits/stl_iterator.h(686,65)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::operator*(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::operator*(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *) const) /usr/include/c++/4.4.7/bits/stl_iterator.h(699,7)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::base(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::base(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *) const) /usr/include/c++/4.4.7/bits/stl_iterator.h(751,7)
+
+===========================================================================
+
+Begin optimization report for: GraphUtils::NodeMatrix::NodeMatrix(GraphUtils::NodeMatrix *, int, double)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (GraphUtils::NodeMatrix::NodeMatrix(GraphUtils::NodeMatrix *, int, double)) [51] phi_graph_utils.cpp(7,1)
+  -> (6,13) std::vector<Node *, std::allocator<Node *>>::~vector(std::vector<Node *, std::allocator<Node *>> *)
+  -> (6,13) std::vector<Node *, std::allocator<Node *>>::vector(std::vector<Node *, std::allocator<Node *>> *)
+  -> EXTERN: (9,24) MKL_malloc(size_t, int)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at phi_graph_utils.cpp(10,5)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at phi_graph_utils.cpp(10,5)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 5 
+   remark #15477: vector loop cost: 1.500 
+   remark #15478: estimated potential speedup: 3.150 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at phi_graph_utils.cpp(10,5)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::vector<Node *, std::allocator<Node *>>::vector(std::vector<Node *, std::allocator<Node *>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::vector<Node *, std::allocator<Node *>>::vector(std::vector<Node *, std::allocator<Node *>> *)) [52] /usr/include/c++/4.4.7/bits/stl_vector.h(208,17)
+  -> INLINE (MANUAL): (207,7) std::_Vector_base<Node *, std::allocator<Node *>>::_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *const)
+    -> INLINE (MANUAL): (104,7) std::_Vector_base<Node *, std::allocator<Node *>>::_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *)
+      -> INLINE (MANUAL): (104,7) std::_Vector_base<Node *, std::allocator<Node *>>::_Vector_impl::_Vector_impl(std::_Vector_base<Node *, std::allocator<Node *>>::_Vector_impl *)
+        -> DELETED: (80,2) std::allocator<Node *>::allocator(std::allocator<Node *> *const)
+
+===========================================================================
+
+Begin optimization report for: std::allocator<Node *>::allocator(std::allocator<Node *> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::allocator<Node *>::allocator(std::allocator<Node *> *const)) /usr/include/c++/4.4.7/bits/allocator.h(101,7)
+
+===========================================================================
+
+Begin optimization report for: std::vector<Node *, std::allocator<Node *>>::~vector(std::vector<Node *, std::allocator<Node *>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::vector<Node *, std::allocator<Node *>>::~vector(std::vector<Node *, std::allocator<Node *>> *)) [54] /usr/include/c++/4.4.7/bits/stl_vector.h(313,7)
+  -> (313,7) std::_Vector_base<Node *, std::allocator<Node *>>::~_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *const)
+  -> DELETED: (313,9) std::_Destroy<std::allocator<Node *>::pointer, Node *>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::allocator<Node *> &)
+  -> INLINE (MANUAL): (314,9) std::_Vector_base<Node *, std::allocator<Node *>>::_M_get_Tp_allocator(std::_Vector_base<Node *, std::allocator<Node *>> *)
+  -> INLINE (MANUAL): (314,33) std::_Vector_base<Node *, std::allocator<Node *>>::~_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *const)
+    -> INLINE (MANUAL): (131,7) std::_Vector_base<Node *, std::allocator<Node *>>::~_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *)
+      -> INLINE (MANUAL): (132,9) std::_Vector_base<Node *, std::allocator<Node *>>::_M_deallocate(std::_Vector_base<Node *, std::allocator<Node *>> *, std::allocator<Node *>::pointer, size_t)
+        -> INLINE (MANUAL): (146,12) __gnu_cxx::new_allocator<Node *>::deallocate(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer, __gnu_cxx::new_allocator<Node *>::size_type)
+          -> EXTERN: /usr/include/c++/4.4.7/ext/new_allocator.h:(95,9) operator delete(void *)
+
+===========================================================================
+
+Begin optimization report for: std::_Vector_base<Node *, std::allocator<Node *>>::~_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::_Vector_base<Node *, std::allocator<Node *>>::~_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *const)) [55] /usr/include/c++/4.4.7/bits/stl_vector.h(131,7)
+  -> INLINE (MANUAL): (131,7) std::_Vector_base<Node *, std::allocator<Node *>>::~_Vector_base(std::_Vector_base<Node *, std::allocator<Node *>> *)
+    -> INLINE (MANUAL): (132,9) std::_Vector_base<Node *, std::allocator<Node *>>::_M_deallocate(std::_Vector_base<Node *, std::allocator<Node *>> *, std::allocator<Node *>::pointer, size_t)
+      -> INLINE (MANUAL): (146,12) __gnu_cxx::new_allocator<Node *>::deallocate(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer, __gnu_cxx::new_allocator<Node *>::size_type)
+        -> EXTERN: /usr/include/c++/4.4.7/ext/new_allocator.h:(95,9) operator delete(void *)
+
+===========================================================================
+
+Begin optimization report for: GraphUtils::NodeMatrix::NodeMatrix(GraphUtils::NodeMatrix *const, int, double)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (GraphUtils::NodeMatrix::NodeMatrix(GraphUtils::NodeMatrix *const, int, double)) [56] phi_graph_utils.cpp(6,13)
+  -> INLINE: (6,13) GraphUtils::NodeMatrix::NodeMatrix(GraphUtils::NodeMatrix *, int, double)
+    -> (6,13) std::vector<Node *, std::allocator<Node *>>::vector(std::vector<Node *, std::allocator<Node *>> *)
+    -> (6,13) std::vector<Node *, std::allocator<Node *>>::~vector(std::vector<Node *, std::allocator<Node *>> *)
+    -> EXTERN: (9,24) MKL_malloc(size_t, int)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at phi_graph_utils.cpp(10,5) inlined into phi_graph_utils.cpp(6,13)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at phi_graph_utils.cpp(10,5) inlined into phi_graph_utils.cpp(6,13)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 5 
+   remark #15477: vector loop cost: 1.500 
+   remark #15478: estimated potential speedup: 3.150 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at phi_graph_utils.cpp(10,5) inlined into phi_graph_utils.cpp(6,13)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: GraphUtils::NodeMatrix::print(GraphUtils::NodeMatrix *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (GraphUtils::NodeMatrix::print(GraphUtils::NodeMatrix *)) [57] phi_graph_utils.cpp(15,26)
+  -> (18,18) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
+  -> (18,48) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (20,14) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at phi_graph_utils.cpp(16,5)
+   remark #15523: loop was not vectorized: loop control variable r was found, but loop iteration count cannot be computed before executing the loop
+
+   LOOP BEGIN at phi_graph_utils.cpp(17,9)
+      remark #15523: loop was not vectorized: loop control variable c was found, but loop iteration count cannot be computed before executing the loop
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::operator|(std::_Ios_Iostate, std::_Ios_Iostate)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::operator|(std::_Ios_Iostate, std::_Ios_Iostate)) /usr/include/c++/4.4.7/bits/ios_base.h(167,3)
+
+===========================================================================
+
+Begin optimization report for: std::__check_facet<std::basic_ios<char, std::char_traits<char>>::__ctype_type>(const std::basic_ios<char, std::char_traits<char>>::__ctype_type *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__check_facet<std::basic_ios<char, std::char_traits<char>>::__ctype_type>(const std::basic_ios<char, std::char_traits<char>>::__ctype_type *)) /usr/include/c++/4.4.7/bits/basic_ios.h(47,5)
+
+===========================================================================
+
+Begin optimization report for: std::_Destroy<std::allocator<Node *>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Destroy<std::allocator<Node *>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer)) /usr/include/c++/4.4.7/bits/stl_construct.h(120,5)
+
+===========================================================================
+
+Begin optimization report for: std::copy_backward<std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::copy_backward<std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *>::pointer)) /usr/include/c++/4.4.7/bits/stl_algobase.h(629,5)
+
+===========================================================================
+
+Begin optimization report for: std::__copy_move_backward_a2<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__copy_move_backward_a2<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *>::pointer)) /usr/include/c++/4.4.7/bits/stl_algobase.h(601,5)
+
+===========================================================================
+
+Begin optimization report for: std::__copy_move_backward_a<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__copy_move_backward_a<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)) /usr/include/c++/4.4.7/bits/stl_algobase.h(583,5)
+
+===========================================================================
+
+Begin optimization report for: std::max<std::vector<Node *, std::allocator<Node *>>::size_type>(const std::vector<Node *, std::allocator<Node *>>::size_type &, const std::vector<Node *, std::allocator<Node *>>::size_type &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::max<std::vector<Node *, std::allocator<Node *>>::size_type>(const std::vector<Node *, std::allocator<Node *>>::size_type &, const std::vector<Node *, std::allocator<Node *>>::size_type &)) /usr/include/c++/4.4.7/bits/stl_algobase.h(210,5)
+
+===========================================================================
+
+Begin optimization report for: std::copy<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::copy<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)) /usr/include/c++/4.4.7/bits/stl_algobase.h(459,5)
+
+===========================================================================
+
+Begin optimization report for: std::__copy_move_a2<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__copy_move_a2<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)) /usr/include/c++/4.4.7/bits/stl_algobase.h(432,5)
+
+===========================================================================
+
+Begin optimization report for: std::__copy_move_a<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__copy_move_a<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)) /usr/include/c++/4.4.7/bits/stl_algobase.h(387,5)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::__exchange_and_add(volatile _Atomic_word *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::__exchange_and_add(volatile _Atomic_word *, int)) /usr/include/c++/4.4.7/ext/atomicity.h(46,3)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::__exchange_and_add_single(_Atomic_word *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::__exchange_and_add_single(_Atomic_word *, int)) /usr/include/c++/4.4.7/ext/atomicity.h(63,3)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::operator-<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> &, const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::operator-<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> &, const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> &)) /usr/include/c++/4.4.7/bits/stl_iterator.h(858,5)
+
+===========================================================================
+
+Begin optimization report for: GraphUtils::listToMatrix(GraphUtils::NodeGraph *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (GraphUtils::listToMatrix(GraphUtils::NodeGraph *)) [74] phi_graph_utils.cpp(26,49)
+  -> EXTERN: (27,16) operator delete(void *)
+  -> EXTERN: (27,16) operator new(size_t)
+  -> INLINE (MANUAL): (27,57) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::size(const std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *) const
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(421,21) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::size(const std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *) const
+  -> INLINE: (28,67) GraphUtils::NodeMatrix::NodeMatrix(GraphUtils::NodeMatrix *, int, double)
+    -> (6,13) std::vector<Node *, std::allocator<Node *>>::vector(std::vector<Node *, std::allocator<Node *>> *)
+    -> (6,13) std::vector<Node *, std::allocator<Node *>>::~vector(std::vector<Node *, std::allocator<Node *>> *)
+    -> EXTERN: (9,24) MKL_malloc(size_t, int)
+  -> INLINE (MANUAL): (28,67) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::size(const std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *) const
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(421,21) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::size(const std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *) const
+  -> INLINE (MANUAL): (29,39) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::begin(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(307,16) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::begin(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_tree.h:(628,5) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+  -> INLINE (MANUAL): (30,16) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator!=(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Self &) const
+  -> INLINE (MANUAL): (30,16) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator!=(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Self &) const
+  -> INLINE (MANUAL): (30,19) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::end(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(325,16) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::end(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_tree.h:(640,50) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+  -> INLINE (MANUAL): (30,19) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::end(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(325,16) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::end(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_tree.h:(640,50) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+  -> INLINE (MANUAL): (31,9) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator++(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *)
+    -> EXTERN: /usr/include/c++/4.4.7/bits/stl_tree.h:(184,12) std::_Rb_tree_increment(std::_Rb_tree_node_base *)
+  -> INLINE (MANUAL): (33,29) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator->(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *) const
+  -> INLINE (MANUAL): (34,26) std::vector<Node *, std::allocator<Node *>>::push_back(std::vector<Node *, std::allocator<Node *>> *, const std::vector<Node *, std::allocator<Node *>>::value_type &)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_vector.h:(737,20) __gnu_cxx::new_allocator<Node *>::construct(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer, Node *const &)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/ext/new_allocator.h:(105,23) operator new(size_t, void *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_vector.h:(741,4) std::vector<Node *, std::allocator<Node *>>::_M_insert_aux(std::vector<Node *, std::allocator<Node *>> *, std::vector<Node *, std::allocator<Node *>>::iterator, const std::vector<Node *, std::allocator<Node *>>::value_type &)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(301,18) __gnu_cxx::new_allocator<Node *>::construct(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer, Node *const &)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/ext/new_allocator.h:(105,23) operator new(size_t, void *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(308,4) std::copy_backward<std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *>::pointer)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_algobase.h:(638,15) std::__copy_move_backward_a2<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *>::pointer)
+          -> INLINE (MANUAL): (602,19) std::__copy_move_backward_a<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+            -> INLINE (MANUAL): (592,14) std::__copy_move_backward<false, true, std::iterator_traits<std::allocator<Node *>::pointer>::iterator_category>::__copy_move_b<Node *>(Node *const *, Node *const *, Node **)
+              -> EXTERN: (575,4) __builtin_memmove(void *, const void *, unsigned long)
+          -> INLINE (MANUAL): (603,6) std::__niter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+          -> INLINE (MANUAL): (604,6) std::__niter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+          -> INLINE (MANUAL): (605,6) std::__niter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_algobase.h:(639,9) std::__miter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_algobase.h:(640,9) std::__miter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(308,4) __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::base(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *) const
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(312,4) __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::operator*(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *) const
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(320,6) std::vector<Node *, std::allocator<Node *>>::_M_check_len(const std::vector<Node *, std::allocator<Node *>> *, std::vector<Node *, std::allocator<Node *>>::size_type, const char *) const
+        -> DELETED: /usr/include/c++/4.4.7/bits/stl_vector.h:(1136,6) std::vector<Node *, std::allocator<Node *>>::max_size(const std::vector<Node *, std::allocator<Node *>> *) const
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_vector.h:(1136,19) std::vector<Node *, std::allocator<Node *>>::size(const std::vector<Node *, std::allocator<Node *>> *) const
+        -> EXTERN: /usr/include/c++/4.4.7/bits/stl_vector.h:(1137,4) std::__throw_length_error(const char *)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_vector.h:(1139,26) std::vector<Node *, std::allocator<Node *>>::size(const std::vector<Node *, std::allocator<Node *>> *) const
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_vector.h:(1139,35) std::max<std::vector<Node *, std::allocator<Node *>>::size_type>(const std::vector<Node *, std::allocator<Node *>>::size_type &, const std::vector<Node *, std::allocator<Node *>>::size_type &)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_vector.h:(1139,44) std::vector<Node *, std::allocator<Node *>>::size(const std::vector<Node *, std::allocator<Node *>> *) const
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_vector.h:(1140,18) std::vector<Node *, std::allocator<Node *>>::size(const std::vector<Node *, std::allocator<Node *>> *) const
+        -> DELETED: /usr/include/c++/4.4.7/bits/stl_vector.h:(1140,36) std::vector<Node *, std::allocator<Node *>>::max_size(const std::vector<Node *, std::allocator<Node *>> *) const
+        -> DELETED: /usr/include/c++/4.4.7/bits/stl_vector.h:(1140,50) std::vector<Node *, std::allocator<Node *>>::max_size(const std::vector<Node *, std::allocator<Node *>> *) const
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(321,48) __gnu_cxx::operator-<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> &, const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> &)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_iterator.h:(858,20) __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::base(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *) const
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_iterator.h:(858,35) __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::base(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *) const
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(321,50) std::vector<Node *, std::allocator<Node *>>::begin(std::vector<Node *, std::allocator<Node *>> *)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_vector.h:(426,25) __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::__normal_iterator(__gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *, const std::vector<Node *, std::allocator<Node *>>::pointer &)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(322,30) std::_Vector_base<Node *, std::allocator<Node *>>::_M_allocate(std::_Vector_base<Node *, std::allocator<Node *>> *, size_t)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_vector.h:(140,35) __gnu_cxx::new_allocator<Node *>::allocate(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::size_type, const void *)
+          -> DELETED: /usr/include/c++/4.4.7/ext/new_allocator.h:(86,35) __gnu_cxx::new_allocator<Node *>::max_size(const __gnu_cxx::new_allocator<Node *> *) const
+          -> EXTERN: /usr/include/c++/4.4.7/ext/new_allocator.h:(87,4) std::__throw_bad_alloc()
+          -> EXTERN: /usr/include/c++/4.4.7/ext/new_allocator.h:(89,27) operator new(size_t)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(330,22) __gnu_cxx::new_allocator<Node *>::construct(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer, Node *const &)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/ext/new_allocator.h:(105,23) operator new(size_t, void *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(339,3) std::__uninitialized_move_a<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::_Vector_base<Node *, std::allocator<Node *>>::_Tp_alloc_type>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::_Vector_base<Node *, std::allocator<Node *>>::_Tp_alloc_type &)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_uninitialized.h:(264,14) std::__uninitialized_copy_a<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, Node *>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *> &)
+          -> INLINE (MANUAL): (256,14) std::uninitialized_copy<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+            -> INLINE (MANUAL): (114,14) std::__uninitialized_copy<true>::uninitialized_copy<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+              -> INLINE (MANUAL): (92,18) std::copy<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+                -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_algobase.h:(466,15) std::__copy_move_a2<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+                  -> INLINE (MANUAL): (433,18) std::__copy_move_a<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+                    -> INLINE (MANUAL): (396,14) std::__copy_move<false, true, std::iterator_traits<std::allocator<Node *>::pointer>::iterator_category>::__copy_m<Node *>(Node *const *, Node *const *, Node **)
+                      -> EXTERN: (378,4) __builtin_memmove(void *, const void *, unsigned long)
+                  -> INLINE (MANUAL): (434,5) std::__niter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+                  -> INLINE (MANUAL): (435,5) std::__niter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+                  -> INLINE (MANUAL): (436,5) std::__niter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+                -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_algobase.h:(467,9) std::__miter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+                -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_algobase.h:(468,9) std::__miter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(340,21) __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::base(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *) const
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(341,10) std::_Vector_base<Node *, std::allocator<Node *>>::_M_get_Tp_allocator(std::_Vector_base<Node *, std::allocator<Node *>> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(345,3) std::__uninitialized_move_a<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::_Vector_base<Node *, std::allocator<Node *>>::_Tp_alloc_type>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::_Vector_base<Node *, std::allocator<Node *>>::_Tp_alloc_type &)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_uninitialized.h:(264,14) std::__uninitialized_copy_a<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, Node *>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *> &)
+          -> INLINE (MANUAL): (256,14) std::uninitialized_copy<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+            -> INLINE (MANUAL): (114,14) std::__uninitialized_copy<true>::uninitialized_copy<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+              -> INLINE (MANUAL): (92,18) std::copy<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+                -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_algobase.h:(466,15) std::__copy_move_a2<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+                  -> INLINE (MANUAL): (433,18) std::__copy_move_a<false, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+                    -> INLINE (MANUAL): (396,14) std::__copy_move<false, true, std::iterator_traits<std::allocator<Node *>::pointer>::iterator_category>::__copy_m<Node *>(Node *const *, Node *const *, Node **)
+                      -> EXTERN: (378,4) __builtin_memmove(void *, const void *, unsigned long)
+                  -> INLINE (MANUAL): (434,5) std::__niter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+                  -> INLINE (MANUAL): (435,5) std::__niter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+                  -> INLINE (MANUAL): (436,5) std::__niter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+                -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_algobase.h:(467,9) std::__miter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+                -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_algobase.h:(468,9) std::__miter_base<std::vector<Node *, std::allocator<Node *>>::pointer, false>::__b(std::vector<Node *, std::allocator<Node *>>::pointer)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(345,42) __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::base(const __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *) const
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(348,10) std::_Vector_base<Node *, std::allocator<Node *>>::_M_get_Tp_allocator(std::_Vector_base<Node *, std::allocator<Node *>> *)
+      -> EXTERN: /usr/include/c++/4.4.7/bits/vector.tcc:(350,11) __cxa_begin_catch
+      -> EXTERN: /usr/include/c++/4.4.7/bits/vector.tcc:(351,6) __cxa_end_catch
+      -> DELETED: /usr/include/c++/4.4.7/bits/vector.tcc:(353,17) __gnu_cxx::new_allocator<Node *>::destroy(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer)
+      -> DELETED: /usr/include/c++/4.4.7/bits/vector.tcc:(355,3) std::_Destroy<std::allocator<Node *>::pointer, Node *>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::allocator<Node *> &)
+      -> /usr/include/c++/4.4.7/bits/vector.tcc:(355,44) std::_Vector_base<Node *, std::allocator<Node *>>::_M_get_Tp_allocator(std::_Vector_base<Node *, std::allocator<Node *>> *)
+      -> /usr/include/c++/4.4.7/bits/vector.tcc:(356,8) std::_Vector_base<Node *, std::allocator<Node *>>::_M_deallocate(std::_Vector_base<Node *, std::allocator<Node *>> *, std::allocator<Node *>::pointer, size_t)
+      -> EXTERN: /usr/include/c++/4.4.7/bits/vector.tcc:(357,8) __cxa_rethrow
+      -> DELETED: /usr/include/c++/4.4.7/bits/vector.tcc:(359,4) std::_Destroy<std::allocator<Node *>::pointer, Node *>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::allocator<Node *> &)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(360,4) std::_Vector_base<Node *, std::allocator<Node *>>::_M_get_Tp_allocator(std::_Vector_base<Node *, std::allocator<Node *>> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/vector.tcc:(361,4) std::_Vector_base<Node *, std::allocator<Node *>>::_M_deallocate(std::_Vector_base<Node *, std::allocator<Node *>> *, std::allocator<Node *>::pointer, size_t)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_vector.h:(146,12) __gnu_cxx::new_allocator<Node *>::deallocate(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer, __gnu_cxx::new_allocator<Node *>::size_type)
+          -> EXTERN: /usr/include/c++/4.4.7/ext/new_allocator.h:(95,9) operator delete(void *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_vector.h:(741,18) std::vector<Node *, std::allocator<Node *>>::end(std::vector<Node *, std::allocator<Node *>> *)
+      -> INLINE (MANUAL): (444,25) __gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>>::__normal_iterator(__gnu_cxx::__normal_iterator<std::vector<Node *, std::allocator<Node *>>::pointer, std::vector<Node *, std::allocator<Node *>>> *, const std::vector<Node *, std::allocator<Node *>>::pointer &)
+  -> INLINE (MANUAL): (35,49) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::begin(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(307,16) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::begin(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_tree.h:(628,5) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+  -> INLINE (MANUAL): (36,17) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator!=(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Self &) const
+  -> INLINE (MANUAL): (36,17) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator!=(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Self &) const
+  -> INLINE (MANUAL): (36,20) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::end(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(325,16) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::end(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_tree.h:(640,50) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+  -> INLINE (MANUAL): (36,20) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::end(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(325,16) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::end(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_tree.h:(640,50) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+  -> INLINE (MANUAL): (37,11) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator++(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *)
+    -> EXTERN: /usr/include/c++/4.4.7/bits/stl_tree.h:(184,12) std::_Rb_tree_increment(std::_Rb_tree_node_base *)
+  -> INLINE (MANUAL): (39,30) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator->(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *) const
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at phi_graph_utils.cpp(10,5) inlined into phi_graph_utils.cpp(28,67)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at phi_graph_utils.cpp(10,5) inlined into phi_graph_utils.cpp(28,67)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 5 
+   remark #15477: vector loop cost: 1.500 
+   remark #15478: estimated potential speedup: 3.150 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at phi_graph_utils.cpp(10,5) inlined into phi_graph_utils.cpp(28,67)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at phi_graph_utils.cpp(30,16)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at phi_graph_utils.cpp(36,17)
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/usr/include/c++/4.4.7/bits/stl_algobase.h(378,4):remark #34014: optimization advice for memmove: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/usr/include/c++/4.4.7/bits/stl_algobase.h(378,4):remark #34014: optimization advice for memmove: increase the source's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/usr/include/c++/4.4.7/bits/stl_algobase.h(378,4):remark #34026: call to memmove implemented as a call to optimized library version
+/usr/include/c++/4.4.7/bits/stl_algobase.h(378,4):remark #34014: optimization advice for memmove: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/usr/include/c++/4.4.7/bits/stl_algobase.h(378,4):remark #34014: optimization advice for memmove: increase the source's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/usr/include/c++/4.4.7/bits/stl_algobase.h(378,4):remark #34026: call to memmove implemented as a call to optimized library version
+===========================================================================
+
+Begin optimization report for: std::vector<Node *, std::allocator<Node *>>::max_size(const std::vector<Node *, std::allocator<Node *>> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::vector<Node *, std::allocator<Node *>>::max_size(const std::vector<Node *, std::allocator<Node *>> *) const) /usr/include/c++/4.4.7/bits/stl_vector.h(538,7)
+
+===========================================================================
+
+Begin optimization report for: std::_Vector_base<Node *, std::allocator<Node *>>::_M_deallocate(std::_Vector_base<Node *, std::allocator<Node *>> *, std::allocator<Node *>::pointer, size_t)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::_Vector_base<Node *, std::allocator<Node *>>::_M_deallocate(std::_Vector_base<Node *, std::allocator<Node *>> *, std::allocator<Node *>::pointer, size_t)) [76] /usr/include/c++/4.4.7/bits/stl_vector.h(144,7)
+  -> INLINE (MANUAL): (146,12) __gnu_cxx::new_allocator<Node *>::deallocate(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer, __gnu_cxx::new_allocator<Node *>::size_type)
+    -> EXTERN: /usr/include/c++/4.4.7/ext/new_allocator.h:(95,9) operator delete(void *)
+
+===========================================================================
+
+Begin optimization report for: std::_Vector_base<Node *, std::allocator<Node *>>::_M_get_Tp_allocator(std::_Vector_base<Node *, std::allocator<Node *>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::_Vector_base<Node *, std::allocator<Node *>>::_M_get_Tp_allocator(std::_Vector_base<Node *, std::allocator<Node *>> *)) [77] /usr/include/c++/4.4.7/bits/stl_vector.h(94,7)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::new_allocator<Node *>::destroy(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::new_allocator<Node *>::destroy(__gnu_cxx::new_allocator<Node *> *, __gnu_cxx::new_allocator<Node *>::pointer)) /usr/include/c++/4.4.7/ext/new_allocator.h(115,28)
+
+===========================================================================
+
+Begin optimization report for: std::_Destroy<std::allocator<Node *>::pointer, Node *>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::allocator<Node *> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::_Destroy<std::allocator<Node *>::pointer, Node *>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::allocator<Node *> &)) /usr/include/c++/4.4.7/bits/stl_construct.h(148,5)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::new_allocator<Node *>::max_size(const __gnu_cxx::new_allocator<Node *> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (__gnu_cxx::new_allocator<Node *>::max_size(const __gnu_cxx::new_allocator<Node *> *) const) /usr/include/c++/4.4.7/ext/new_allocator.h(99,7)
+
+===========================================================================
+
+Begin optimization report for: GraphUtils::matrixToPrestige(GraphUtils::NodeMatrix *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (GraphUtils::matrixToPrestige(GraphUtils::NodeMatrix *)) [81] phi_graph_utils.cpp(51,51)
+  -> EXTERN: (54,33) MKL_malloc(size_t, int)
+  -> EXTERN: (57,7) perror(const char *)
+  -> EXTERN: (58,7) exit(int)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at phi_graph_utils.cpp(61,4)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at phi_graph_utils.cpp(61,4)
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 5 
+   remark #15477: vector loop cost: 1.500 
+   remark #15478: estimated potential speedup: 3.150 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at phi_graph_utils.cpp(61,4)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: GraphUtils::printNodeGraph(GraphUtils::NodeGraph *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (GraphUtils::printNodeGraph(GraphUtils::NodeGraph *)) [82] phi_graph_utils.cpp(69,1)
+  -> INLINE (MANUAL): (71,36) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::begin(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(307,16) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::begin(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_tree.h:(628,5) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+  -> INLINE (MANUAL): (71,57) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator!=(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Self &) const
+  -> INLINE (MANUAL): (71,57) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator!=(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Self &) const
+  -> INLINE (MANUAL): (71,60) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::end(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(325,16) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::end(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_tree.h:(640,50) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+  -> INLINE (MANUAL): (71,60) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::end(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(325,16) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::end(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_tree.h:(640,50) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+  -> INLINE (MANUAL): (71,74) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator++(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *)
+    -> EXTERN: /usr/include/c++/4.4.7/bits/stl_tree.h:(184,12) std::_Rb_tree_increment(std::_Rb_tree_node_base *)
+  -> INLINE (MANUAL): (73,24) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::~basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(503,9) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_rep(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
+      -> INLINE (MANUAL): (286,44) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_data(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(503,19) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_M_dispose(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep *, const std::allocator<char> &)
+      -> INLINE (MANUAL): (232,34) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_S_empty_rep()
+      -> (234,10) __gnu_cxx::__exchange_and_add_dispatch(_Atomic_word *, int)
+      -> EXTERN: (236,8) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_M_destroy(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep *, const std::allocator<char> &)
+    -> DELETED: /usr/include/c++/4.4.7/bits/basic_string.h:(503,36) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::get_allocator(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::allocator_type *, const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
+  -> INLINE (MANUAL): (73,24) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator->(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *) const
+  -> EXTERN: (73,24) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, const std::basic_string<char, std::char_traits<char>, std::allocator<char>> &)
+  -> INLINE (MANUAL): (74,26) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator->(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *) const
+  -> (75,14) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (75,26) std::operator<<<char, std::char_traits<char>, std::allocator<char>>(std::basic_ostream<char, std::char_traits<char>> &, const std::basic_string<char, std::char_traits<char>, std::allocator<char>> &)
+  -> INLINE (MANUAL): (75,33) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator->(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *) const
+  -> (75,41) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> EXTERN: (75,48) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, int)
+  -> (76,14) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> EXTERN: (76,25) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, int)
+  -> (76,44) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> EXTERN: (76,54) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, int)
+  -> (76,72) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
+  -> INLINE (MANUAL): (78,53) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::begin(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(307,16) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::begin(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_tree.h:(628,5) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+  -> INLINE (MANUAL): (78,89) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator!=(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Self &) const
+  -> INLINE (MANUAL): (78,89) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator!=(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Self &) const
+  -> INLINE (MANUAL): (78,92) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::end(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(325,16) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::end(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_tree.h:(640,50) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+  -> INLINE (MANUAL): (78,92) std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::end(std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_map.h:(325,16) std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::end(std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type> *)
+      -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/stl_tree.h:(640,50) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Rb_tree_iterator(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *, std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::_Link_type)
+  -> INLINE (MANUAL): (78,118) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator++(std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *)
+    -> EXTERN: /usr/include/c++/4.4.7/bits/stl_tree.h:(184,12) std::_Rb_tree_increment(std::_Rb_tree_node_base *)
+  -> (80,18) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (80,26) std::operator<<<char, std::char_traits<char>, std::allocator<char>>(std::basic_ostream<char, std::char_traits<char>> &, const std::basic_string<char, std::char_traits<char>, std::allocator<char>> &)
+  -> INLINE (MANUAL): (80,36) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator->(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *) const
+  -> (80,44) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> EXTERN: (81,18) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, int)
+  -> INLINE (MANUAL): (81,28) std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type>::operator->(const std::_Rb_tree_iterator<std::_Rb_tree<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_type, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type, std::_Select1st<std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::value_type>, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::key_compare, std::map<std::string, Node *, std::less<std::string>, std::allocator<std::pair<const std::string, Node *>>>::_Pair_alloc_type>::value_type> *) const
+  -> (81,45) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
+  -> INLINE (MANUAL): (83,5) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::~basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *)
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(503,9) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_rep(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
+      -> INLINE (MANUAL): (286,44) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_data(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
+    -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(503,19) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_M_dispose(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep *, const std::allocator<char> &)
+      -> INLINE (MANUAL): (232,34) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_S_empty_rep()
+      -> INLINE (MANUAL): (234,10) __gnu_cxx::__exchange_and_add_dispatch(_Atomic_word *, int)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/ext/atomicity.h:(78,9) __gthread_active_p()
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/ext/atomicity.h:(79,14) __gnu_cxx::__exchange_and_add(volatile _Atomic_word *, int)
+          -> EXTERN: (46,12) __sync_fetch_and_add_4(volatile void *, unsigned int)
+        -> INLINE (MANUAL): /usr/include/c++/4.4.7/ext/atomicity.h:(81,14) __gnu_cxx::__exchange_and_add_single(_Atomic_word *, int)
+      -> EXTERN: (236,8) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_M_destroy(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep *, const std::allocator<char> &)
+    -> DELETED: /usr/include/c++/4.4.7/bits/basic_string.h:(503,36) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::get_allocator(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::allocator_type *, const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at phi_graph_utils.cpp(78,89)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at phi_graph_utils.cpp(71,57)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form
+LOOP END
+===========================================================================
+
+Begin optimization report for: std::char_traits<char>::length(const std::char_traits<char>::char_type *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::char_traits<char>::length(const std::char_traits<char>::char_type *)) [89] /usr/include/c++/4.4.7/bits/char_traits.h(263,7)
+  -> EXTERN: (263,16) __builtin_strlen(const char *)
+
+===========================================================================
+
+Begin optimization report for: __gnu_cxx::__exchange_and_add_dispatch(_Atomic_word *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (__gnu_cxx::__exchange_and_add_dispatch(_Atomic_word *, int)) [90] /usr/include/c++/4.4.7/ext/atomicity.h(76,3)
+  -> INLINE (MANUAL): (78,9) __gthread_active_p()
+  -> INLINE (MANUAL): (79,14) __gnu_cxx::__exchange_and_add(volatile _Atomic_word *, int)
+    -> EXTERN: (46,12) __sync_fetch_and_add_4(volatile void *, unsigned int)
+  -> INLINE (MANUAL): (81,14) __gnu_cxx::__exchange_and_add_single(_Atomic_word *, int)
+
+===========================================================================
+
+Begin optimization report for: __sti__$E()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (__sti__$E()) [92] <compiler generated>
+  -> EXTERN: /usr/include/c++/4.4.7/iostream:(72,25) __cxa_atexit()
+  -> EXTERN: /usr/include/c++/4.4.7/iostream:(72,25) std::ios_base::Init::Init(std::ios_base::Init *)
+
+===========================================================================
+
+Begin optimization report for: std::uninitialized_copy<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::uninitialized_copy<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)) /usr/include/c++/4.4.7/bits/stl_uninitialized.h(108,5)
+
+===========================================================================
+
+Begin optimization report for: std::__uninitialized_copy_a<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, Node *>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__uninitialized_copy_a<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, Node *>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::allocator<Node *> &)) /usr/include/c++/4.4.7/bits/stl_uninitialized.h(256,5)
+
+===========================================================================
+
+Begin optimization report for: std::__uninitialized_move_a<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::_Vector_base<Node *, std::allocator<Node *>>::_Tp_alloc_type>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::_Vector_base<Node *, std::allocator<Node *>>::_Tp_alloc_type &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__uninitialized_move_a<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::_Vector_base<Node *, std::allocator<Node *>>::_Tp_alloc_type>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer, std::_Vector_base<Node *, std::allocator<Node *>>::_Tp_alloc_type &)) /usr/include/c++/4.4.7/bits/stl_uninitialized.h(263,5)
+
+===========================================================================
+
+Begin optimization report for: std::__uninitialized_copy<true>::uninitialized_copy<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::__uninitialized_copy<true>::uninitialized_copy<std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer>(std::allocator<Node *>::pointer, std::allocator<Node *>::pointer, std::vector<Node *, std::allocator<Node *>>::pointer)) /usr/include/c++/4.4.7/bits/stl_uninitialized.h(92,9)
+
+===========================================================================
