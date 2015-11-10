@@ -1,0 +1,157 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+
+Begin optimization report for: addRandomness(double *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (addRandomness(double *, int)) [1] phi_page_rank.cpp(14,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at phi_page_rank.cpp(16,5)
+<Peeled loop for vectorization>
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+LOOP END
+
+LOOP BEGIN at phi_page_rank.cpp(16,5)
+   remark #15301: SIMD LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 2 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 48 
+   remark #15477: vector loop cost: 5.500 
+   remark #15478: estimated potential speedup: 7.860 
+   remark #15488: --- end vector loop cost summary ---
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 8
+LOOP END
+
+LOOP BEGIN at phi_page_rank.cpp(16,5)
+<Remainder loop for vectorization>
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+LOOP END
+
+LOOP BEGIN at phi_page_rank.cpp(16,5)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: checkConvergence(double *, double *, int, double)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (checkConvergence(double *, double *, int, double)) [2] phi_page_rank.cpp(24,1)
+  -> INLINE (MANUAL): (30,12) std::abs(long)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at phi_page_rank.cpp(28,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria
+LOOP END
+===========================================================================
+
+Begin optimization report for: pageRank(GraphUtils::NodeGraph *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (pageRank(GraphUtils::NodeGraph *)) [3] phi_page_rank.cpp(38,1)
+  -> EXTERN: (39,26) GraphUtils::listToMatrix(GraphUtils::NodeGraph *)
+  -> EXTERN: (41,24) GraphUtils::matrixToPrestige(GraphUtils::NodeMatrix *)
+  -> EXTERN: (49,38) MKL_malloc(size_t, int)
+  -> INLINE: (53,11) checkConvergence(double *, double *, int, double)
+    -> INLINE (MANUAL): (30,12) std::abs(long)
+  -> INLINE: (53,11) checkConvergence(double *, double *, int, double)
+    -> INLINE (MANUAL): (30,12) std::abs(long)
+  -> EXTERN: (55,9) cblas_dgemm(CBLAS_LAYOUT, CBLAS_TRANSPOSE, CBLAS_TRANSPOSE, int, int, int, double, const double *, int, const double *, int, double, double *, int)
+  -> EXTERN: (59,9) memcpy(void *, const void *, size_t)
+  -> INLINE: (60,9) addRandomness(double *, int)
+  -> EXTERN: (64,5) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (67,9) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (69,5) fprintf(FILE *, const char *, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at phi_page_rank.cpp(53,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at phi_page_rank.cpp(16,5) inlined into phi_page_rank.cpp(60,9)
+   <Peeled loop for vectorization>
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+   LOOP END
+
+   LOOP BEGIN at phi_page_rank.cpp(16,5) inlined into phi_page_rank.cpp(60,9)
+      remark #15301: SIMD LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 2 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 48 
+      remark #15477: vector loop cost: 5.500 
+      remark #15478: estimated potential speedup: 7.860 
+      remark #15488: --- end vector loop cost summary ---
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 8
+   LOOP END
+
+   LOOP BEGIN at phi_page_rank.cpp(16,5) inlined into phi_page_rank.cpp(60,9)
+   <Remainder loop for vectorization>
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+   LOOP END
+
+   LOOP BEGIN at phi_page_rank.cpp(16,5) inlined into phi_page_rank.cpp(60,9)
+   <Remainder loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at phi_page_rank.cpp(28,5) inlined into phi_page_rank.cpp(53,11)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria
+   LOOP END
+LOOP END
+
+LOOP BEGIN at phi_page_rank.cpp(65,6)
+   remark #15527: loop was not vectorized: function call to fprintf(FILE *, const char *, ...) cannot be vectorized   [ phi_page_rank.cpp(67,9) ]
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+phi_page_rank.cpp(59,9):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+phi_page_rank.cpp(59,9):remark #34014: optimization advice for memcpy: increase the source's alignment to 16 (and use __assume_aligned) to speed up library implementation
+phi_page_rank.cpp(59,9):remark #34026: call to memcpy implemented as a call to optimized library version
+===========================================================================
+
+Begin optimization report for: std::abs(long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::abs(long)) /usr/include/c++/4.4.7/cstdlib(139,17)
+
+===========================================================================
+
+Begin optimization report for: __sti__$E()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (__sti__$E()) [5] <compiler generated>
+  -> EXTERN: /usr/include/c++/4.4.7/iostream:(72,25) __cxa_atexit()
+  -> EXTERN: /usr/include/c++/4.4.7/iostream:(72,25) std::ios_base::Init::Init(std::ios_base::Init *)
+
+===========================================================================

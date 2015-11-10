@@ -48,7 +48,8 @@ GraphUtils::NodeGraph *readCSVData(char *fileName)
             // Get neighbor 
             line = line.substr(delimIndex + 1);
             delimIndex = line.find(CSV_DELIMITER);
-            nodeID2.assign(line.substr(0, delimIndex));
+            // skip the pace in front and don't include the comma
+            nodeID2.assign(line.substr(1, delimIndex - 1));
             Node *node2;
             
             // Create the neighbor node if it doesnt exist
