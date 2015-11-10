@@ -162,11 +162,13 @@ void pageRank(GraphUtils::NodeGraph *graph) {
    const int width = matrix->width;
    float *prestige = GraphUtils::matrixToPrestige(matrix);
    
-   const int iterations = 30000;
+   const int iterations = 2;
    //bool converge = false; // TODO: get it working with converge
 
    // while not converge
    for (int i = 0; i < iterations; i++) {
+      cout << "Iteration: " << i << endl;
+      matrix->print();
       PageRankOnDevice(matrix->matrix, width, width,
                        prestige, width, 1);
       // update converge
