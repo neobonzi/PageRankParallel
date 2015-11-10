@@ -1,4 +1,5 @@
 #include "GraphUtils.h"
+#include <cmath>
 
 namespace GraphUtils
 {
@@ -37,10 +38,12 @@ NodeMatrix *listToMatrix(NodeGraph *node_graph) {
       {
          Node *node_B = refIt->second;
          // node_A points to node_B
-         node_matrix->matrix
-            [INDEX(node_A->id_num /* row */,
-                   node_B->id_num /* col */,
-                   node_matrix->width)] += 1/(double)node_A->outDegree;
+         if (node_A->outDegree != 0) {
+            node_matrix->matrix
+               [INDEX(node_A->id_num /* row */,
+                      node_B->id_num /* col */,
+                      node_matrix->width)] += 1/(double)(node_A->outDegree);
+         }
       }
    }
    return node_matrix;       
@@ -71,8 +74,6 @@ void printNodeGraph(NodeGraph *graph)
     {
         string k = iter->first;
         Node *node = iter->second;
-        cout << "Node: " << iter->first << " " << node->id_num;
-        cout << " Out " << node->outDegree << " In " << node->inDegree << endl;
         
         for(map<string, Node *>::iterator refIter = node->referencedBy.begin(); refIter != node->referencedBy.end(); ++refIter)
         {

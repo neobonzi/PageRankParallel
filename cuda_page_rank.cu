@@ -113,9 +113,6 @@ void PageRankOnDevice(double *matrix, int rows_matrix, int cols_matrix,
    HANDLE_ERROR(cudaMalloc(&Pd, size_N));
 
    // Launch kernel for the matrix multiply.
-   // TODO: See if this is necessary
-   //dim3 threads(32, 32);
-   //dim3 grid(cols_P/32.0, rows_P/32.0);
    cublasHandle_t handle;
    HANDLE_CUBLAS_ERROR(cublasCreate(&handle));
    const double alpha = 1.0f;
@@ -180,7 +177,7 @@ void pageRank(GraphUtils::NodeGraph *graph) {
    std::sort(matrix->nodes.begin(), matrix->nodes.end(), Node::CompareByRank());
    for (int i = 0; i < matrix->nodes.size(); i++) {
       Node *node = matrix->nodes[i];
-      printf("%d: \"%s\" with rank %f\n",
+      printf("%d: %s with rank %f\n",
              i, node->identifier.c_str(), node->curRank); 
    }
 }

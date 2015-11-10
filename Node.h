@@ -48,7 +48,7 @@ public:
    class CompareByRank {
       public:
       bool operator()(const Node *a, const Node *b) {
-         return a->curRank < b->curRank;
+         return a->curRank > b->curRank;
       }
    };
 };
