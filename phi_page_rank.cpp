@@ -16,7 +16,7 @@ void addRandomness(double *prestiges, int count)
     for(int i = 0; i < count; i++)
     {
        prestiges[i] *= RANDOM_WEIGHT;
-       prestiges[i] += ((1.0 - RANDOM_WEIGHT) * (1 / ((double)count)));
+       prestiges[i] += ((1.0f - RANDOM_WEIGHT) * (1.0f / ((double)count)));
     }
 }
 
@@ -25,12 +25,20 @@ int checkConvergence(double *oldPrestiges, double *newPrestiges, int count, doub
     if (*newPrestiges == -1)
         return 0;
 
+    long sum = 0.0f;
+    #pragma simd
     for(int i = 0; i < count; i++)
     {
-        if(abs((long)(oldPrestiges[i] - newPrestiges[i])) > DELTA)
-            return 0;
+        sum += abs((long)(oldPrestiges[i] - newPrestiges[i])); 
     }
 
+    if (sum > DELTA)
+    {
+        cout << "NOPE: " << sum;
+        return 0;
+    }
+
+    cout << "converged: " << sum;
     return 1;
 }
 
@@ -47,27 +55,27 @@ void pageRank(NodeGraph *graph)
     alpha = 1.0;
     beta = 0.0;
     double *newPrestiges = (double *)mkl_malloc(sizeof(double) * width, 64);
-    *newPrestiges = -1;
 
     int counter = 0;
 
-    for(int k = 0; k < width; k++)
-    {
-        fprintf(stderr, "%d: %lf, ",k, prestige[k]);
-    }
-    cout << endl;
-    while(checkConvergence(prestige, newPrestiges, width, DELTA) == 0)  
+    while(1)
     {
         cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
             1, width, width, alpha, prestige, width, matrix->matrix, width,
             beta, newPrestiges, width);
+ 
+        addRandomness(newPrestiges, width);
 
+        if (counter != 0 && checkConvergence(prestige, newPrestiges, width, DELTA) == 1)
+        {
+            fprintf(stderr, "Converged after %d iterations\n", counter);
+            memcpy(prestige, newPrestiges, width);
+            break;
+        }
         memcpy(prestige, newPrestiges, width);
-        addRandomness(prestige, width);
 
         counter++;
     }
-    fprintf(stderr, "Converged after %d iterations\n", counter);
     for(int k = 0; k < width; k++)
     {
         fprintf(stderr, "%d: %lf, ",k, prestige[k]);

@@ -36,7 +36,7 @@ GraphUtils::NodeGraph *readCSVData(char *fileName)
                 node1 = graph->at(nodeID1);
             }
             else
-            {   
+            {
                 node1 = new Node(nodeID1, id_num++);
                 (*graph)[nodeID1] = node1;
             }
@@ -44,13 +44,12 @@ GraphUtils::NodeGraph *readCSVData(char *fileName)
             // Skip
             line = line.substr(delimIndex + 1);
             delimIndex = line.find(CSV_DELIMITER);
-           
             // Get neighbor 
             line = line.substr(delimIndex + 1);
-            delimIndex = line.find(CSV_DELIMITER);
             // skip the pace in front and don't include the comma
-            nodeID2.assign(line.substr(1, delimIndex - 1));
-            Node *node2;
+            delimIndex = line.find(CSV_DELIMITER);
+            nodeID2.assign(line.substr(0, delimIndex));
+            Node *node2; 
             
             // Create the neighbor node if it doesnt exist
             // and put it in the map
@@ -65,8 +64,6 @@ GraphUtils::NodeGraph *readCSVData(char *fileName)
             }
             
             // Make the node1 -> node2 relationship
-            node1->outDegree++;
-            node2->inDegree++;
             node2->addReferencedByNode(node1);
         }
 
