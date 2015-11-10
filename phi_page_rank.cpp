@@ -6,8 +6,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define RANDOM_WEIGHT .85
-#define DELTA .00000000005
+#define RANDOM_WEIGHT .95f
+#define DELTA .0001f
 using namespace GraphUtils;
 
 void addRandomness(double *prestiges, int count)
@@ -50,6 +50,12 @@ void pageRank(NodeGraph *graph)
     *newPrestiges = -1;
 
     int counter = 0;
+
+    for(int k = 0; k < width; k++)
+    {
+        fprintf(stderr, "%d: %lf, ",k, prestige[k]);
+    }
+    cout << endl;
     while(checkConvergence(prestige, newPrestiges, width, DELTA) == 0)  
     {
         cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
@@ -62,9 +68,9 @@ void pageRank(NodeGraph *graph)
         counter++;
     }
     fprintf(stderr, "Converged after %d iterations\n", counter);
-     for(int k = 0; k < width; k++)
+    for(int k = 0; k < width; k++)
     {
-        fprintf(stderr, "%lf", prestige[k]);
+        fprintf(stderr, "%d: %lf, ",k, prestige[k]);
     }
     fprintf(stderr, "\n");
 
