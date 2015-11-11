@@ -3,11 +3,12 @@
 #include "PageRank.h"
 #include "mkl.h"
 #include <string.h>
+#include <cmath>
 #include <stdlib.h>
 #include <stdio.h>
 
-#define RANDOM_WEIGHT .95f
-#define DELTA .0001f
+#define RANDOM_WEIGHT 0.95
+#define DELTA 0.0001
 using namespace GraphUtils;
 
 void addRandomness(double *prestiges, int count)
@@ -16,20 +17,20 @@ void addRandomness(double *prestiges, int count)
     for(int i = 0; i < count; i++)
     {
        prestiges[i] *= RANDOM_WEIGHT;
-       prestiges[i] += ((1.0f - RANDOM_WEIGHT) * (1.0f / ((double)count)));
+       prestiges[i] += ((1.0 - RANDOM_WEIGHT) * (1.0 / ((double)count)));
+       cout << "1 - d * 1 / n = " << ((1.0 - RANDOM_WEIGHT) * (1.0 / ((double)count))) << endl;
     }
 }
 
 int checkConvergence(double *oldPrestiges, double *newPrestiges, int count, double delta)
 {
-    if (*newPrestiges == -1)
-        return 0;
+    double sum = 0.0;
 
-    long sum = 0.0f;
-    #pragma simd
     for(int i = 0; i < count; i++)
     {
-        sum += abs((long)(oldPrestiges[i] - newPrestiges[i])); 
+        //cout << "old " << oldPrestiges[i] << " new " << newPrestiges[i] << endl;
+        double difference = oldPrestiges[i] - newPrestiges[i];
+        sum += abs(difference); 
     }
 
     if (sum > DELTA)
@@ -42,13 +43,26 @@ int checkConvergence(double *oldPrestiges, double *newPrestiges, int count, doub
     return 1;
 }
 
+void matrixMultiply(double *prestige, double *matrix, double *result, int width)
+{
+    for (int x = 0; x < width; x++)
+    {
+        double sum = 0.0;
+        for(int y = 0; y < width; y++)
+        {
+            sum += prestige[y] * matrix[(x * width) + y];
+        }
+        result[x] = sum;
+    }
+}
+
 void pageRank(NodeGraph *graph)
 {
     NodeMatrix *matrix = listToMatrix(graph);
     const int width = matrix->width;
     double *prestige = GraphUtils::matrixToPrestige(matrix);
     
-    const int iterations = 100;
+    const int iterations = 10;
 
     //SGEMM Constants
     double alpha, beta;
@@ -58,21 +72,30 @@ void pageRank(NodeGraph *graph)
 
     int counter = 0;
 
-    while(1)
+    cout << "Printing matrix" << endl;
+    matrix->print();
+    while(counter < iterations)
     {
-        cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
-            1, width, width, alpha, prestige, width, matrix->matrix, width,
-            beta, newPrestiges, width);
- 
-        addRandomness(newPrestiges, width);
+        matrixMultiply(prestige, matrix->matrix, newPrestiges, width);
+        //cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
+            //1, width, width, alpha, prestige, width, matrix->matrix, width,
+            //beta, newPrestiges, width);
 
+        //cout << "new Prestiges: ";
+        //for(int z = 0; z < width; z++)
+        //{
+        //    cout << newPrestiges[z] << " ";
+        //}
+        cout << endl;
+
+        addRandomness(newPrestiges, width);
         if (counter != 0 && checkConvergence(prestige, newPrestiges, width, DELTA) == 1)
         {
             fprintf(stderr, "Converged after %d iterations\n", counter);
             memcpy(prestige, newPrestiges, width);
             break;
         }
-        memcpy(prestige, newPrestiges, width);
+        memcpy(prestige, newPrestiges, width * sizeof(double));
 
         counter++;
     }

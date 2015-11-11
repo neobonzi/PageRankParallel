@@ -14,6 +14,7 @@ NodeMatrix::NodeMatrix(int w, double initial_value) : width(w)
 
 void NodeMatrix::print() {
     for (int r = 0; r < width; r++) {
+        cout << "Row " << r << ": ";
         for (int c = 0; c < width; c++) {
             cout << matrix[INDEX(r, c, width)] << " ";
         }
