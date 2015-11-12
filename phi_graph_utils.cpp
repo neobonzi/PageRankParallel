@@ -25,8 +25,10 @@ void NodeMatrix::print() {
 // Converts a NodeGraph stored as an adjacency list to NodeMatrix stored as an
 // adjacency matrix.
 NodeMatrix *listToMatrix(NodeGraph *node_graph) {
+    //NodeMatrix *node_matrix = new NodeMatrix(node_graph->size(),
+                                            //1/(double)node_graph->size());
    NodeMatrix *node_matrix = new NodeMatrix(node_graph->size(),
-                                            1/(double)node_graph->size());
+                                            0);
    for (NodeGraph::iterator graphIt = node_graph->begin();
         graphIt!= node_graph->end();
         ++graphIt)
@@ -40,9 +42,10 @@ NodeMatrix *listToMatrix(NodeGraph *node_graph) {
          Node *node_B = refIt->second;
          // node_A points to node_B
          node_matrix->matrix
-            [INDEX(node_A->id_num /* row */,
-                   node_B->id_num /* col */,
-                   node_matrix->width)] += 1/(double)node_A->outDegree;
+            [INDEX(node_B->id_num /* row */,
+                   node_A->id_num /* col */,
+                   node_matrix->width)] += 1/(double)node_B->outDegree;
+         cout << node_B->identifier << "[" << node_B->id_num << "] -> "<< node_A->identifier << "[" << node_A->id_num << "] Index: " << INDEX(node_B->id_num, node_A->id_num, node_matrix->width) << endl;
       }
    }
    return node_matrix;       

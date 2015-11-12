@@ -18,7 +18,6 @@ void addRandomness(double *prestiges, int count)
     {
        prestiges[i] *= RANDOM_WEIGHT;
        prestiges[i] += ((1.0 - RANDOM_WEIGHT) * (1.0 / ((double)count)));
-       cout << "1 - d * 1 / n = " << ((1.0 - RANDOM_WEIGHT) * (1.0 / ((double)count))) << endl;
     }
 }
 
@@ -50,9 +49,13 @@ void matrixMultiply(double *prestige, double *matrix, double *result, int width)
         double sum = 0.0;
         for(int y = 0; y < width; y++)
         {
-            sum += prestige[y] * matrix[(x * width) + y];
+            //cout << prestige[y] << " * " << matrix[(x * width) + y] << " =  " ;
+            sum = sum + (prestige[y] * matrix[(x * width) + y]);
+            //cout << sum << " + " << endl;
         }
+        //cout << " = " << sum << endl;
         result[x] = sum;
+        //cout << "Sum: " << result[x];
     }
 }
 
@@ -62,7 +65,7 @@ void pageRank(NodeGraph *graph)
     const int width = matrix->width;
     double *prestige = GraphUtils::matrixToPrestige(matrix);
     
-    const int iterations = 10;
+    const int iterations = 10000;
 
     //SGEMM Constants
     double alpha, beta;
@@ -73,7 +76,7 @@ void pageRank(NodeGraph *graph)
     int counter = 0;
 
     cout << "Printing matrix" << endl;
-    matrix->print();
+    //matrix->print();
     while(counter < iterations)
     {
         matrixMultiply(prestige, matrix->matrix, newPrestiges, width);

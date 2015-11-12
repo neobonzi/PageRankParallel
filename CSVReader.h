@@ -39,7 +39,6 @@ GraphUtils::NodeGraph *readCSVData(char *fileName)
             removeCharsFromString(substring, ",\"");
             nodeID1.assign(substring);
             Node *node1;
-            cout << "Nodeid 1: |" << nodeID1 << "|" << endl; 
             // Look up the identifier in the map
             if (graph->count(nodeID1) != 0)
             {
@@ -70,7 +69,6 @@ GraphUtils::NodeGraph *readCSVData(char *fileName)
                 removeCharsFromString(substring, ",\"");
                 nodeID2.assign(substring);
             }
-            cout << "Node id 2: |" << nodeID2 << "|" << endl;
             Node *node2; 
             
             // Create the neighbor node if it doesnt exist
