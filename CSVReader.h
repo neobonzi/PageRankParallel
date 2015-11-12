@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <stdio.h>
 #include "GraphUtils.h"
 
 using namespace std;
@@ -46,7 +47,6 @@ GraphUtils::NodeGraph *readCSVData(char *fileName)
             delimIndex = line.find(CSV_DELIMITER);
             // Get neighbor 
             line = line.substr(delimIndex + 1);
-            // skip the pace in front and don't include the comma
             delimIndex = line.find(CSV_DELIMITER);
             nodeID2.assign(line.substr(0, delimIndex));
             Node *node2; 

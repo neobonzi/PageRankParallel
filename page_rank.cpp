@@ -34,8 +34,6 @@ int main(int argc, char **argv)
       graph = readSNAPData(argv[1]);
    }
 
-   GraphUtils::printNodeGraph(graph);
-
    pageRank(graph);
    return 0;
 }
