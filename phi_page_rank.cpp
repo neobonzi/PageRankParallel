@@ -25,20 +25,18 @@ int checkConvergence(double *oldPrestiges, double *newPrestiges, int count, doub
 {
     double sum = 0.0;
 
+    #pragma simd
     for(int i = 0; i < count; i++)
     {
-        //cout << "old " << oldPrestiges[i] << " new " << newPrestiges[i] << endl;
         double difference = oldPrestiges[i] - newPrestiges[i];
         sum += abs(difference); 
     }
 
     if (sum > DELTA)
     {
-        cout << "NOPE: " << sum;
         return 0;
     }
 
-    cout << "converged: " << sum;
     return 1;
 }
 
@@ -49,13 +47,9 @@ void matrixMultiply(double *prestige, double *matrix, double *result, int width)
         double sum = 0.0;
         for(int y = 0; y < width; y++)
         {
-            //cout << prestige[y] << " * " << matrix[(x * width) + y] << " =  " ;
             sum = sum + (prestige[y] * matrix[(x * width) + y]);
-            //cout << sum << " + " << endl;
         }
-        //cout << " = " << sum << endl;
         result[x] = sum;
-        //cout << "Sum: " << result[x];
     }
 }
 
@@ -79,17 +73,16 @@ void pageRank(NodeGraph *graph)
     //matrix->print();
     while(counter < iterations)
     {
-        matrixMultiply(prestige, matrix->matrix, newPrestiges, width);
-        //cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
-            //1, width, width, alpha, prestige, width, matrix->matrix, width,
-            //beta, newPrestiges, width);
+        //matrixMultiply(prestige, matrix->matrix, newPrestiges, width);
+        cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
+            1, width, width, alpha, prestige, width, matrix->matrix, width,
+            beta, newPrestiges, width);
 
         //cout << "new Prestiges: ";
         //for(int z = 0; z < width; z++)
         //{
         //    cout << newPrestiges[z] << " ";
         //}
-        cout << endl;
 
         addRandomness(newPrestiges, width);
         if (counter != 0 && checkConvergence(prestige, newPrestiges, width, DELTA) == 1)

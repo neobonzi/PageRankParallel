@@ -6,10 +6,7 @@ namespace GraphUtils
 NodeMatrix::NodeMatrix(int w) : width(w) 
 {
     width = w;
-    matrix = (double *)mkl_malloc(w * w * sizeof(double), 64);
-    for (int i = 0; i < w*w; i++) {
-        matrix[i] = 1/(double)w; 
-    }
+    matrix = (double *)mkl_calloc(w * w, sizeof(double), 64);
 }
 
 void NodeMatrix::print() {
@@ -27,8 +24,8 @@ void NodeMatrix::print() {
 NodeMatrix *listToMatrix(NodeGraph *node_graph) {
     //NodeMatrix *node_matrix = new NodeMatrix(node_graph->size(),
                                             //1/(double)node_graph->size());
-   NodeMatrix *node_matrix = new NodeMatrix(node_graph->size(),
-                                            0);
+   NodeMatrix *node_matrix = new NodeMatrix(node_graph->size());
+
    for (NodeGraph::iterator graphIt = node_graph->begin();
         graphIt!= node_graph->end();
         ++graphIt)
@@ -45,7 +42,6 @@ NodeMatrix *listToMatrix(NodeGraph *node_graph) {
             [INDEX(node_B->id_num /* row */,
                    node_A->id_num /* col */,
                    node_matrix->width)] += 1/(double)node_B->outDegree;
-         cout << node_B->identifier << "[" << node_B->id_num << "] -> "<< node_A->identifier << "[" << node_A->id_num << "] Index: " << INDEX(node_B->id_num, node_A->id_num, node_matrix->width) << endl;
       }
    }
    return node_matrix;       
