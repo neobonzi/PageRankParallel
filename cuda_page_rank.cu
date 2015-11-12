@@ -14,6 +14,9 @@
 #include <unistd.h>
 
 #define TILEWIDTH 32
+#ifndef ITERATIONS
+#define ITERATIONS 1000
+#endif
 
 #ifndef D
 #define D 0.85
@@ -97,13 +100,6 @@ __global__ void AddRandomness(double *prestige, double *rPrestige, int vertices)
       rPrestige[ndx] = D*prestige[ndx] + (1-D)/(double)vertices;
    }
 }
-__global__ void UpdateMatrix(double *matrix, double *prestige, int width) {
-   int row = blockIdx.y*TILEWIDTH + threadIdx.y;
-   int col = blockIdx.x*TILEWIDTH + threadIdx.x;
-   if (row < width && col < width) {
-      matrix[INDEX(row, col, width)] = prestige[row];
-   }
-}
 
 __global__ void MatMultKernel(double *Md, int rows_M, int cols_M,
                               double *Nd, int rows_N, int cols_N,
@@ -176,16 +172,7 @@ void PageRankOnDevice(double *matrix, int rows_matrix, int cols_matrix,
    dim3 r_block(TILEWIDTH, 1);
    AddRandomness<<<r_grid, r_block>>>(Pd, Nd, rows_matrix);
 
-   // Launch kernel to update matrix
-   int grid_width = ceil(cols_matrix/(double)TILEWIDTH);
-   int grid_len = ceil(rows_matrix/(double)TILEWIDTH);
-   dim3 u_grid(grid_width, grid_len);
-   dim3 u_block(TILEWIDTH, TILEWIDTH);
-   UpdateMatrix<<<u_grid, u_block>>>(matrixd, Pd, rows_matrix);
-
    // Copy result to host.
-   HANDLE_ERROR(cudaMemcpy(matrix, matrixd, size_matrix,
-                           cudaMemcpyDeviceToHost));
    HANDLE_ERROR(cudaMemcpy(N, Nd, size_N, cudaMemcpyDeviceToHost));
 
    // Free memory.
@@ -204,21 +191,11 @@ void pageRank(GraphUtils::NodeGraph *graph) {
    GraphUtils::NodeMatrix *matrix = GraphUtils::listToMatrix(graph);
    const int width = matrix->width;
    double *prestige = GraphUtils::matrixToPrestige(matrix);
-   
-   const int iterations = 10;
-   //bool converge = false; // TODO: get it working with converge
-
-   printf("CONST %lf (1-CONST): %lf ADD: %lf\n", D, (1-D), (1-D)/(double)width);
 
    // while not converge
-   for (int i = 0; i < iterations; i++) {
-      printf("Iteration %d: ", i);
-      for (int x = 0; x < width; x++)
-         printf("%lf ", prestige[x]);
-      printf("\n");
+   for (int i = 0; i < ITERATIONS; i++) {
       PageRankOnDevice(matrix->matrix, width, width,
-                       prestige, width, 1);
-      // update converge
+                                  prestige, width, 1);
    }
 
    // update Node objects in vertex

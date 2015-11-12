@@ -5,7 +5,6 @@
 #include <algorithm>
 #include <cstring>
 #include <map>
-#include <stdio.h>
 #include "GraphUtils.h"
 
 using namespace std;
@@ -15,7 +14,7 @@ namespace CSVReader
 
 #define CSV_DELIMITER ","
 
-void removeCharsFromString( string &str, char* charsToRemove ) {
+void removeCharsFromString( string &str, const char* charsToRemove ) {
     for ( unsigned int i = 0; i < strlen(charsToRemove); ++i ) {
         str.erase( remove(str.begin(), str.end(), charsToRemove[i]), str.end() );
     }
@@ -40,7 +39,6 @@ GraphUtils::NodeGraph *readCSVData(char *fileName)
             removeCharsFromString(substring, ",\"");
             nodeID1.assign(substring);
             Node *node1;
-            cout << "Nodeid 1: |" << nodeID1 << "|" << endl; 
             // Look up the identifier in the map
             if (graph->count(nodeID1) != 0)
             {
@@ -70,7 +68,6 @@ GraphUtils::NodeGraph *readCSVData(char *fileName)
                 removeCharsFromString(substring, ",\"");
                 nodeID2.assign(substring);
             }
-            cout << "Node id 2: |" << nodeID2 << "|" << endl;
             Node *node2; 
             
             // Create the neighbor node if it doesnt exist

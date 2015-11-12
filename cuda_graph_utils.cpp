@@ -8,7 +8,8 @@ NodeMatrix::NodeMatrix(int w, double initial_value) : width(w)
     width = w;
     matrix = (double *)malloc(w * w * sizeof(double));
     for (int i = 0; i < w*w; i++) {
-        matrix[i] = initial_value; 
+        //matrix[i] = initial_value; 
+        matrix[i] = 0;
     }
 }
 
@@ -62,6 +63,7 @@ double* matrixToPrestige(NodeMatrix *node_matrix) {
 
    for (int i = 0 ; i < width; i++) {
       prestige[i] = init_val;
+      //prestige[i] = 0;
    }
 
    return prestige;
