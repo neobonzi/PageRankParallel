@@ -3,12 +3,12 @@
 
 namespace GraphUtils
 {
-NodeMatrix::NodeMatrix(int w, double initial_value) : width(w) 
+NodeMatrix::NodeMatrix(int w) : width(w) 
 {
     width = w;
     matrix = (double *)mkl_malloc(w * w * sizeof(double), 64);
     for (int i = 0; i < w*w; i++) {
-        matrix[i] = initial_value; 
+        matrix[i] = 1/(double)w; 
     }
 }
 

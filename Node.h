@@ -20,7 +20,7 @@ public:
    Node(string id, int id_num) : identifier(id), id_num(id_num),
                                  inDegree(0), outDegree(0) {}
    
-   // Addes a node to this nodes list of "referenced by" nodes
+   // Adds a node to this nodes list of "referenced by" nodes
    void addReferencedByNode(Node *otherNode)
    {
       if(referencedBy.count(otherNode->identifier) == 0)

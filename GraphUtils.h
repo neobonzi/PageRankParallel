@@ -12,7 +12,7 @@ using namespace std;
 // INDEX specifies how the NodeMatrix will be indexed.
 // It can be defined as either "col_major" or "row_major".
 #ifndef INDEX
-#define INDEX col_major
+#define INDEX col_major 
 #endif
 
 namespace GraphUtils
@@ -34,7 +34,7 @@ class NodeMatrix {
       vector<Node *> nodes;
       int width;
 
-      NodeMatrix(int w, double initial_value); 
+      NodeMatrix(int w);
       void print(); 
 };
 

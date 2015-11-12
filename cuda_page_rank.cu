@@ -143,7 +143,7 @@ void PageRankOnDevice(double *matrix, int rows_matrix, int cols_matrix,
    HANDLE_ERROR(cudaMalloc(&Pd, size_N));
 
    // Launch kernel for the matrix multiply.
-   /*
+/*
    cublasHandle_t handle;
    HANDLE_CUBLAS_ERROR(cublasCreate(&handle));
    const double alpha = 1.0f;
@@ -192,7 +192,6 @@ void pageRank(GraphUtils::NodeGraph *graph) {
    const int width = matrix->width;
    double *prestige = GraphUtils::matrixToPrestige(matrix);
 
-   // while not converge
    for (int i = 0; i < ITERATIONS; i++) {
       PageRankOnDevice(matrix->matrix, width, width,
                                   prestige, width, 1);
