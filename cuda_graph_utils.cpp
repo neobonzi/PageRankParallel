@@ -3,12 +3,12 @@
 
 namespace GraphUtils
 {
-NodeMatrix::NodeMatrix(int w, double initial_value) : width(w) 
+NodeMatrix::NodeMatrix(int w) : width(w) 
 {
     width = w;
     matrix = (double *)malloc(w * w * sizeof(double));
     for (int i = 0; i < w*w; i++) {
-        matrix[i] = initial_value; 
+        matrix[i] = 0;
     }
 }
 
@@ -24,8 +24,7 @@ void NodeMatrix::print() {
 // Converts a NodeGraph stored as an adjacency list to NodeMatrix stored as an
 // adjacency matrix.
 NodeMatrix *listToMatrix(NodeGraph *node_graph) {
-   NodeMatrix *node_matrix = new NodeMatrix(node_graph->size(),
-                                            1/(double)node_graph->size());
+   NodeMatrix *node_matrix = new NodeMatrix(node_graph->size());
    for (NodeGraph::iterator graphIt = node_graph->begin();
         graphIt!= node_graph->end();
         ++graphIt)
@@ -40,9 +39,9 @@ NodeMatrix *listToMatrix(NodeGraph *node_graph) {
          // node_A points to node_B
          if (node_A->outDegree != 0) {
             node_matrix->matrix
-               [INDEX(node_A->id_num /* row */,
-                      node_B->id_num /* col */,
-                      node_matrix->width)] += 1/(double)(node_A->outDegree);
+               [INDEX(node_B->id_num /* row */,
+                      node_A->id_num /* col */,
+                      node_matrix->width)] += 1/(double)(node_B->outDegree);
          }
       }
    }

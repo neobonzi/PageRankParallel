@@ -14,7 +14,7 @@ namespace CSVReader
 
 #define CSV_DELIMITER ","
 
-void removeCharsFromString( string &str, char* charsToRemove ) {
+void removeCharsFromString( string &str, const char* charsToRemove ) {
     for ( unsigned int i = 0; i < strlen(charsToRemove); ++i ) {
         str.erase( remove(str.begin(), str.end(), charsToRemove[i]), str.end() );
     }
@@ -55,7 +55,6 @@ GraphUtils::NodeGraph *readCSVData(char *fileName)
             delimIndex = line.find(CSV_DELIMITER);
             // Get neighbor 
             line = line.substr(delimIndex + 1);
-            // skip the pace in front and don't include the comma
             delimIndex = line.find(CSV_DELIMITER);
             if (line[0] == ' ')
             {
