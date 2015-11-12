@@ -2,6 +2,8 @@
 #define CSV_READER_H_
 #include <vector>
 #include <string>
+#include <algorithm>
+#include <cstring>
 #include <map>
 #include <stdio.h>
 #include "GraphUtils.h"
@@ -12,6 +14,12 @@ namespace CSVReader
 {
 
 #define CSV_DELIMITER ","
+
+void removeCharsFromString( string &str, char* charsToRemove ) {
+    for ( unsigned int i = 0; i < strlen(charsToRemove); ++i ) {
+        str.erase( remove(str.begin(), str.end(), charsToRemove[i]), str.end() );
+    }
+}
 
 GraphUtils::NodeGraph *readCSVData(char *fileName)
 {
@@ -27,10 +35,12 @@ GraphUtils::NodeGraph *readCSVData(char *fileName)
         {
             int delimIndex = line.find(CSV_DELIMITER);
             string nodeID1, nodeID2;
-            
-            nodeID1.assign(line.substr(0, delimIndex));
+           
+            string substring = line.substr(0, delimIndex);
+            removeCharsFromString(substring, ",\"");
+            nodeID1.assign(substring);
             Node *node1;
-            
+            cout << "Nodeid 1: |" << nodeID1 << "|" << endl; 
             // Look up the identifier in the map
             if (graph->count(nodeID1) != 0)
             {
@@ -48,7 +58,19 @@ GraphUtils::NodeGraph *readCSVData(char *fileName)
             // Get neighbor 
             line = line.substr(delimIndex + 1);
             delimIndex = line.find(CSV_DELIMITER);
-            nodeID2.assign(line.substr(0, delimIndex));
+            if (line[0] == ' ')
+            {
+                substring = line.substr(1, delimIndex);
+                removeCharsFromString(substring, ",\"");
+                nodeID2.assign(substring);
+            }
+            else
+            {
+                substring = line.substr(0, delimIndex);
+                removeCharsFromString(substring, ",\"");
+                nodeID2.assign(substring);
+            }
+            cout << "Node id 2: |" << nodeID2 << "|" << endl;
             Node *node2; 
             
             // Create the neighbor node if it doesnt exist
