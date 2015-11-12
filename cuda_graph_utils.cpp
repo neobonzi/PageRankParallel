@@ -1,5 +1,4 @@
 #include "GraphUtils.h"
-#include <cmath>
 
 namespace GraphUtils
 {
