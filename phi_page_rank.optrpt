@@ -143,8 +143,8 @@ INLINE REPORT: (pageRank(GraphUtils::NodeGraph *)) [4] phi_page_rank.cpp(57,1)
   -> EXTERN: (58,26) GraphUtils::listToMatrix(GraphUtils::NodeGraph *)
   -> EXTERN: (60,24) GraphUtils::matrixToPrestige(GraphUtils::NodeMatrix *)
   -> EXTERN: (68,38) MKL_malloc(size_t, int)
-  -> (72,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-  -> (72,31) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
+  -> (71,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (71,31) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
   -> EXTERN: (77,9) cblas_dgemm(CBLAS_LAYOUT, CBLAS_TRANSPOSE, CBLAS_TRANSPOSE, int, int, int, double, const double *, int, const double *, int, double, double *, int)
   -> INLINE: (87,9) addRandomness(double *, int)
   -> INLINE: (88,29) checkConvergence(double *, double *, int, double)
@@ -159,7 +159,7 @@ INLINE REPORT: (pageRank(GraphUtils::NodeGraph *)) [4] phi_page_rank.cpp(57,1)
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at phi_page_rank.cpp(74,5)
+LOOP BEGIN at phi_page_rank.cpp(73,5)
    remark #15542: loop was not vectorized: inner loop was already vectorized
 
    LOOP BEGIN at phi_page_rank.cpp(17,5) inlined into phi_page_rank.cpp(87,9)

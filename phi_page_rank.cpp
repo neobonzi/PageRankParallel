@@ -24,7 +24,7 @@ void addRandomness(double *prestiges, int count)
 int checkConvergence(double *oldPrestiges, double *newPrestiges, int count, double delta)
 {
     double sum = 0.0;
-
+    
     #pragma simd
     for(int i = 0; i < count; i++)
     {
@@ -66,7 +66,6 @@ void pageRank(NodeGraph *graph)
     alpha = 1.0;
     beta = 0.0;
     double *newPrestiges = (double *)mkl_malloc(sizeof(double) * width, 64);
-
     int counter = 0;
 
     cout << "Printing matrix" << endl;
@@ -74,8 +73,9 @@ void pageRank(NodeGraph *graph)
     while(counter < iterations)
     {
         //matrixMultiply(prestige, matrix->matrix, newPrestiges, width);
-        cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
-            1, width, width, alpha, prestige, width, matrix->matrix, width,
+        double *coeffMatrix = matrix->matrix;
+        cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasTrans,
+            1, width, width, alpha, prestige, width, coeffMatrix, width,
             beta, newPrestiges, width);
 
         //cout << "new Prestiges: ";
