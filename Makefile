@@ -6,7 +6,7 @@ CUDASRC=page_rank.cpp cuda_page_rank.cu cuda_graph_utils.cpp
 CUSPARSESRC=cusparse_page_rank.cu cusparse_graph_utils.cpp
 MICSRC=page_rank.cpp phi_page_rank.cpp phi_graph_utils.cpp
 
-all: xeon_phi cuda
+all: xeon_phi cusparse
 
 xeon_phi: $(MICSRC)
 	$(CPP) $(CFLAGS) -o micrank $^
