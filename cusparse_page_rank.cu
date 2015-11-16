@@ -23,7 +23,7 @@
 #include <unistd.h>
 
 #ifndef ITERATIONS
-#define ITERATIONS 1000 
+#define ITERATIONS 300 
 #endif
 
 #ifndef D
