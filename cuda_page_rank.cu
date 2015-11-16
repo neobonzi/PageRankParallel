@@ -1,5 +1,4 @@
 #include "PageRank.h"
-#include "GraphUtils.h"
 #include <algorithm>
 #include <cuda_runtime.h>
 
@@ -15,11 +14,11 @@
 #define TILEWIDTH 32
 
 #ifndef ITERATIONS
-#define ITERATIONS 1000
+#define ITERATIONS 300 
 #endif
 
 #ifndef D
-#define D 0.85
+#define D 0.95
 #endif
 
 #ifndef max
@@ -91,18 +90,24 @@ void PageRankOnDevice(double *matrix, int rows_matrix, int cols_matrix,
    HANDLE_ERROR(cudaMalloc(&Pd, size_N));
 
    // Launch kernel for the matrix multiply.
-   int result_width = ceil(cols_N/(float)TILEWIDTH);
-   int result_len = ceil(rows_N/(float)TILEWIDTH);
+   int result_width = ceil(cols_N/(double)TILEWIDTH);
+   int result_len = ceil(rows_N/(double)TILEWIDTH);
    dim3 dimGrid(result_width, result_len);
    dim3 dimBlock(TILEWIDTH, TILEWIDTH);
    int tiles = max(max(rows_matrix, cols_matrix), max(rows_N, cols_N));
-   PageRankKernel<<<dimGrid, dimBlock>>>(matrixd, rows_matrix, cols_matrix,
-                                         Nd, rows_N, cols_N,
-                                         Pd, rows_N, cols_N,
-                                         tiles);
+   for (int i = 0; i < ITERATIONS; i+=2) {
+      PageRankKernel<<<dimGrid, dimBlock>>>(matrixd, rows_matrix, cols_matrix,
+                                            Nd, rows_N, cols_N,
+                                            Pd, rows_N, cols_N,
+                                            tiles);
+      PageRankKernel<<<dimGrid, dimBlock>>>(matrixd, rows_matrix, cols_matrix,
+                                            Pd, rows_N, cols_N,
+                                            Nd, rows_N, cols_N,
+                                            tiles);
+   }
 
    // Copy result to host.
-   HANDLE_ERROR(cudaMemcpy(N, Pd, size_N, cudaMemcpyDeviceToHost));
+   HANDLE_ERROR(cudaMemcpy(N, Nd, size_N, cudaMemcpyDeviceToHost));
 
    // Free memory.
    HANDLE_ERROR(cudaFree(matrixd));
@@ -121,20 +126,18 @@ void pageRank(GraphUtils::NodeGraph *graph) {
    const int width = matrix->width;
    double *prestige = GraphUtils::matrixToPrestige(matrix);
 
-   for (int i = 0; i < ITERATIONS; i++) {
-      PageRankOnDevice(matrix->matrix, width, width,
-                                  prestige, width, 1);
-   }
+   PageRankOnDevice(matrix->matrix, width, width,
+                    prestige, width, 1);
 
    // update Node objects in vertex
    updateNodePrestige(matrix->nodes, prestige);
    free(prestige);
 
    // sort result and print out ranking
-   std::sort(matrix->nodes.begin(), matrix->nodes.end(), Node::CompareByRank());
+   //std::sort(matrix->nodes.begin(), matrix->nodes.end(), Node::CompareByRank());
    for (int i = 0; i < matrix->nodes.size(); i++) {
       Node *node = matrix->nodes[i];
-      printf("%d: %s with rank %lf\n",
+      printf("%d: %s with rank %f\n",
              i + 1, node->identifier.c_str(), node->curRank); 
    }
 }

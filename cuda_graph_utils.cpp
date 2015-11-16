@@ -2,10 +2,19 @@
 
 namespace GraphUtils
 {
+// Exits gracefully if malloc returns a NULL pointer.
+void *check_malloc(size_t size) {
+   void *ptr = malloc(size);
+   if (ptr == NULL) {
+      perror("malloc");
+      exit(-1);
+   }
+   return ptr;
+}
 NodeMatrix::NodeMatrix(int w) : width(w) 
 {
     width = w;
-    matrix = (double *)malloc(w * w * sizeof(double));
+    matrix = (double *)check_malloc(w * w * sizeof(double));
     for (int i = 0; i < w*w; i++) {
         matrix[i] = 0;
     }
@@ -35,8 +44,8 @@ NodeMatrix *listToMatrix(NodeGraph *node_graph) {
           ++refIt)
       {
          Node *node_B = refIt->second;
-         // node_A points to node_B
-         if (node_A->outDegree != 0) {
+         // node_B points to node_A
+         if (node_B->outDegree != 0) {
             node_matrix->matrix
                [INDEX(node_B->id_num /* row */,
                       node_A->id_num /* col */,
@@ -51,12 +60,7 @@ NodeMatrix *listToMatrix(NodeGraph *node_graph) {
 double* matrixToPrestige(NodeMatrix *node_matrix) {
    const int width = node_matrix->width;
    double init_val = 1/(double)width;
-   double *prestige = (double *) malloc(width*sizeof(double));
-
-   if (prestige == NULL) {
-      perror("malloc");
-      exit(-1);
-   }
+   double *prestige = (double *) check_malloc(width*sizeof(double));
 
    for (int i = 0 ; i < width; i++) {
       prestige[i] = init_val;

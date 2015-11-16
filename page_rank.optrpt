@@ -2,6 +2,7 @@ Intel(R) Advisor can now assist with vectorization and show optimization
   report messages with your source code.
 See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
+
     Report from: Interprocedural optimizations [ipo]
 
 INLINING OPTION VALUES:
@@ -17,9 +18,9 @@ Begin optimization report for: main(int, char **)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main(int, char **)) [1] page_rank.cpp(23,1)
-  -> DELETED: (24,11) std::allocator<char>::~allocator(std::allocator<char> *)
-  -> INLINE (MANUAL): (24,29) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::~basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *)
+INLINE REPORT: (main(int, char **)) [1] page_rank.cpp(22,1)
+  -> DELETED: (23,11) std::allocator<char>::~allocator(std::allocator<char> *)
+  -> INLINE (MANUAL): (23,29) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::~basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *)
     -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(503,9) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_rep(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
       -> INLINE (MANUAL): (286,44) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_data(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
     -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(503,19) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_M_dispose(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep *, const std::allocator<char> &)
@@ -27,10 +28,10 @@ INLINE REPORT: (main(int, char **)) [1] page_rank.cpp(23,1)
       -> (234,10) __gnu_cxx::__exchange_and_add_dispatch(_Atomic_word *, int)
       -> EXTERN: (236,8) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_M_destroy(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep *, const std::allocator<char> &)
     -> DELETED: /usr/include/c++/4.4.7/bits/basic_string.h:(503,36) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::get_allocator(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::allocator_type *, const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
-  -> DELETED: (24,29) std::allocator<char>::~allocator(std::allocator<char> *)
-  -> EXTERN: (24,29) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, const char *, const std::allocator<char> &)
-  -> DELETED: (24,29) std::allocator<char>::allocator(std::allocator<char> *)
-  -> INLINE (MANUAL): (28,16) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::~basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *)
+  -> DELETED: (23,29) std::allocator<char>::~allocator(std::allocator<char> *)
+  -> EXTERN: (23,29) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, const char *, const std::allocator<char> &)
+  -> DELETED: (23,29) std::allocator<char>::allocator(std::allocator<char> *)
+  -> INLINE (MANUAL): (27,16) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::~basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *)
     -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(503,9) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_rep(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
       -> INLINE (MANUAL): (286,44) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_data(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
     -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(503,19) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_M_dispose(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep *, const std::allocator<char> &)
@@ -38,20 +39,20 @@ INLINE REPORT: (main(int, char **)) [1] page_rank.cpp(23,1)
       -> (234,10) __gnu_cxx::__exchange_and_add_dispatch(_Atomic_word *, int)
       -> EXTERN: (236,8) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_M_destroy(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep *, const std::allocator<char> &)
     -> DELETED: /usr/include/c++/4.4.7/bits/basic_string.h:(503,36) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::get_allocator(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::allocator_type *, const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
-  -> INLINE (MANUAL): (28,16) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::substr(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type, std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type) const
+  -> INLINE (MANUAL): (27,16) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::substr(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type, std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type) const
     -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(2003,8) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_check(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type, const char *) const
       -> INLINE (MANUAL): (308,20) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
         -> INLINE (MANUAL): (629,16) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_rep(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
           -> INLINE (MANUAL): (286,44) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_data(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
       -> EXTERN: (309,4) std::__throw_out_of_range(const char *)
     -> EXTERN: /usr/include/c++/4.4.7/bits/basic_string.h:(2003,49) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, const std::basic_string<char, std::char_traits<char>, std::allocator<char>> &, std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type, std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type)
-  -> INLINE (MANUAL): (28,32) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::find_last_of(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, const char *, std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type) const
+  -> INLINE (MANUAL): (27,32) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::find_last_of(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, const char *, std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type) const
     -> EXTERN: /usr/include/c++/4.4.7/bits/basic_string.h:(1851,15) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::find_last_of(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, const char *, std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type, std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type) const
     -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(1851,40) std::char_traits<char>::length(const std::char_traits<char>::char_type *)
       -> EXTERN: /usr/include/c++/4.4.7/bits/char_traits.h:(263,16) __builtin_strlen(const char *)
-  -> INLINE (MANUAL): (28,55) std::operator==<char, std::char_traits<char>, std::allocator<char>>(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> &, const char *)
+  -> INLINE (MANUAL): (27,55) std::operator==<char, std::char_traits<char>, std::allocator<char>>(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> &, const char *)
     -> EXTERN: /usr/include/c++/4.4.7/bits/basic_string.h:(2267,20) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::compare(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *, const char *) const
-  -> INLINE (MANUAL): (28,55) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::~basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *)
+  -> INLINE (MANUAL): (27,55) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::~basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *)
     -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(503,9) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_rep(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
       -> INLINE (MANUAL): (286,44) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_data(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
     -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(503,19) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_M_dispose(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep *, const std::allocator<char> &)
@@ -63,10 +64,10 @@ INLINE REPORT: (main(int, char **)) [1] page_rank.cpp(23,1)
         -> INLINE (MANUAL): /usr/include/c++/4.4.7/ext/atomicity.h:(81,14) __gnu_cxx::__exchange_and_add_single(_Atomic_word *, int)
       -> EXTERN: (236,8) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_M_destroy(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep *, const std::allocator<char> &)
     -> DELETED: /usr/include/c++/4.4.7/bits/basic_string.h:(503,36) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::get_allocator(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::allocator_type *, const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
-  -> (30,15) CSVReader::readCSVData(char *)
-  -> (34,15) SNAPReader::readSNAPData(char *)
-  -> EXTERN: (39,4) pageRank(GraphUtils::NodeGraph *)
-  -> INLINE (MANUAL): (40,4) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::~basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *)
+  -> (29,15) CSVReader::readCSVData(char *)
+  -> (33,15) SNAPReader::readSNAPData(char *)
+  -> EXTERN: (36,4) pageRank(GraphUtils::NodeGraph *)
+  -> INLINE (MANUAL): (37,4) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::~basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *)
     -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(503,9) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_rep(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
       -> INLINE (MANUAL): (286,44) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_data(const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *) const
     -> INLINE (MANUAL): /usr/include/c++/4.4.7/bits/basic_string.h:(503,19) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep::_M_dispose(std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Rep *, const std::allocator<char> &)
