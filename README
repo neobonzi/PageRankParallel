@@ -1,0 +1,9 @@
+To compile all programs follow these command line instructions:
+$ make
+This will generate two binaries: one named micrank, the other named cusparserank.
+
+To run the micrank binary, use the following command:
+$ ./micrank <path to file that contains the data set>
+
+To run the cusparserank binary, use the following command:
+$ ./cusparserank <path to file that contains the data set>
