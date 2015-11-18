@@ -68,8 +68,6 @@ GraphUtils::NodeGraph *readSNAPData(char *fileName)
             }
             
             // Make the node1 -> node2 relationship
-            node1->outDegree++;
-            node2->inDegree++;
             node2->addReferencedByNode(node1);
         }
 
