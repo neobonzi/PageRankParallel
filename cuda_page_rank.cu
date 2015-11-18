@@ -134,7 +134,7 @@ void pageRank(GraphUtils::NodeGraph *graph) {
    free(prestige);
 
    // sort result and print out ranking
-   //std::sort(matrix->nodes.begin(), matrix->nodes.end(), Node::CompareByRank());
+   std::sort(matrix->nodes.begin(), matrix->nodes.end(), Node::CompareByRank());
    for (int i = 0; i < matrix->nodes.size(); i++) {
       Node *node = matrix->nodes[i];
       printf("%d: %s with rank %f\n",
