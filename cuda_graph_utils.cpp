@@ -1,14 +1,22 @@
 #include "GraphUtils.h"
-#include <cmath>
 
 namespace GraphUtils
 {
-NodeMatrix::NodeMatrix(int w, double initial_value) : width(w) 
+// Exits gracefully if malloc returns a NULL pointer.
+void *check_malloc(size_t size) {
+   void *ptr = malloc(size);
+   if (ptr == NULL) {
+      perror("malloc");
+      exit(-1);
+   }
+   return ptr;
+}
+NodeMatrix::NodeMatrix(int w) : width(w) 
 {
     width = w;
-    matrix = (double *)malloc(w * w * sizeof(double));
+    matrix = (double *)check_malloc(w * w * sizeof(double));
     for (int i = 0; i < w*w; i++) {
-        matrix[i] = initial_value; 
+        matrix[i] = 0;
     }
 }
 
@@ -24,8 +32,7 @@ void NodeMatrix::print() {
 // Converts a NodeGraph stored as an adjacency list to NodeMatrix stored as an
 // adjacency matrix.
 NodeMatrix *listToMatrix(NodeGraph *node_graph) {
-   NodeMatrix *node_matrix = new NodeMatrix(node_graph->size(),
-                                            1/(double)node_graph->size());
+   NodeMatrix *node_matrix = new NodeMatrix(node_graph->size());
    for (NodeGraph::iterator graphIt = node_graph->begin();
         graphIt!= node_graph->end();
         ++graphIt)
@@ -37,12 +44,12 @@ NodeMatrix *listToMatrix(NodeGraph *node_graph) {
           ++refIt)
       {
          Node *node_B = refIt->second;
-         // node_A points to node_B
-         if (node_A->outDegree != 0) {
+         // node_B points to node_A
+         if (node_B->outDegree != 0) {
             node_matrix->matrix
-               [INDEX(node_A->id_num /* row */,
-                      node_B->id_num /* col */,
-                      node_matrix->width)] += 1/(double)(node_A->outDegree);
+               [INDEX(node_B->id_num /* row */,
+                      node_A->id_num /* col */,
+                      node_matrix->width)] += 1/(double)(node_B->outDegree);
          }
       }
    }
@@ -53,12 +60,7 @@ NodeMatrix *listToMatrix(NodeGraph *node_graph) {
 double* matrixToPrestige(NodeMatrix *node_matrix) {
    const int width = node_matrix->width;
    double init_val = 1/(double)width;
-   double *prestige = (double *) malloc(width*sizeof(double));
-
-   if (prestige == NULL) {
-      perror("malloc");
-      exit(-1);
-   }
+   double *prestige = (double *) check_malloc(width*sizeof(double));
 
    for (int i = 0 ; i < width; i++) {
       prestige[i] = init_val;

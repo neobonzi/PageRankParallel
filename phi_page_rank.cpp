@@ -18,28 +18,25 @@ void addRandomness(double *prestiges, int count)
     {
        prestiges[i] *= RANDOM_WEIGHT;
        prestiges[i] += ((1.0 - RANDOM_WEIGHT) * (1.0 / ((double)count)));
-       cout << "1 - d * 1 / n = " << ((1.0 - RANDOM_WEIGHT) * (1.0 / ((double)count))) << endl;
     }
 }
 
 int checkConvergence(double *oldPrestiges, double *newPrestiges, int count, double delta)
 {
     double sum = 0.0;
-
+    
+    #pragma simd
     for(int i = 0; i < count; i++)
     {
-        //cout << "old " << oldPrestiges[i] << " new " << newPrestiges[i] << endl;
         double difference = oldPrestiges[i] - newPrestiges[i];
         sum += abs(difference); 
     }
 
     if (sum > DELTA)
     {
-        cout << "NOPE: " << sum;
         return 0;
     }
 
-    cout << "converged: " << sum;
     return 1;
 }
 
@@ -50,7 +47,7 @@ void matrixMultiply(double *prestige, double *matrix, double *result, int width)
         double sum = 0.0;
         for(int y = 0; y < width; y++)
         {
-            sum += prestige[y] * matrix[(x * width) + y];
+            sum = sum + (prestige[y] * matrix[(x * width) + y]);
         }
         result[x] = sum;
     }
@@ -62,31 +59,30 @@ void pageRank(NodeGraph *graph)
     const int width = matrix->width;
     double *prestige = GraphUtils::matrixToPrestige(matrix);
     
-    const int iterations = 10;
+    const int iterations = 10000;
 
     //SGEMM Constants
     double alpha, beta;
     alpha = 1.0;
     beta = 0.0;
     double *newPrestiges = (double *)mkl_malloc(sizeof(double) * width, 64);
-
     int counter = 0;
 
     cout << "Printing matrix" << endl;
-    matrix->print();
+    //matrix->print();
     while(counter < iterations)
     {
-        matrixMultiply(prestige, matrix->matrix, newPrestiges, width);
-        //cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
-            //1, width, width, alpha, prestige, width, matrix->matrix, width,
-            //beta, newPrestiges, width);
+        //matrixMultiply(prestige, matrix->matrix, newPrestiges, width);
+        double *coeffMatrix = matrix->matrix;
+        cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasTrans,
+            1, width, width, alpha, prestige, width, coeffMatrix, width,
+            beta, newPrestiges, width);
 
         //cout << "new Prestiges: ";
         //for(int z = 0; z < width; z++)
         //{
         //    cout << newPrestiges[z] << " ";
         //}
-        cout << endl;
 
         addRandomness(newPrestiges, width);
         if (counter != 0 && checkConvergence(prestige, newPrestiges, width, DELTA) == 1)

@@ -2,6 +2,7 @@ Intel(R) Advisor can now assist with vectorization and show optimization
   report messages with your source code.
 See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
+
     Report from: Interprocedural optimizations [ipo]
 
 INLINING OPTION VALUES:
@@ -18,9 +19,6 @@ Begin optimization report for: addRandomness(double *, int)
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (addRandomness(double *, int)) [1] phi_page_rank.cpp(15,1)
-  -> (21,13) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-  -> (21,35) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
-  -> (21,88) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -28,6 +26,7 @@ INLINE REPORT: (addRandomness(double *, int)) [1] phi_page_rank.cpp(15,1)
 
 LOOP BEGIN at phi_page_rank.cpp(17,5)
 <Peeled loop for vectorization>
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
 LOOP END
 
 LOOP BEGIN at phi_page_rank.cpp(17,5)
@@ -36,19 +35,17 @@ LOOP BEGIN at phi_page_rank.cpp(17,5)
    remark #15448: unmasked aligned unit stride loads: 1 
    remark #15449: unmasked aligned unit stride stores: 2 
    remark #15475: --- begin vector loop cost summary ---
-   remark #15476: scalar loop cost: 389 
-   remark #15477: vector loop cost: 381.500 
-   remark #15478: estimated potential speedup: 1.010 
-   remark #15485: serialized function calls: 3
+   remark #15476: scalar loop cost: 48 
+   remark #15477: vector loop cost: 5.500 
+   remark #15478: estimated potential speedup: 7.860 
    remark #15488: --- end vector loop cost summary ---
-   remark #15489: --- begin vector function matching report ---
-   remark #15490: Function call: std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) with simdlen=2, actual parameter types: (uniform,uniform)   [ phi_page_rank.cpp(21,13) ]
-   remark #15545: SIMD annotation was not seen, consider adding 'declare simd' directives at function declaration 
-   remark #15490: Function call: std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double) with simdlen=2, actual parameter types: (vector,uniform)   [ phi_page_rank.cpp(21,35) ]
-   remark #15545: SIMD annotation was not seen, consider adding 'declare simd' directives at function declaration 
-   remark #15490: Function call: std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) with simdlen=2, actual parameter types: (vector,uniform)   [ phi_page_rank.cpp(21,88) ]
-   remark #15545: SIMD annotation was not seen, consider adding 'declare simd' directives at function declaration 
-   remark #15493: --- end vector function matching report ---
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 8
+LOOP END
+
+LOOP BEGIN at phi_page_rank.cpp(17,5)
+<Remainder loop for vectorization>
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
 LOOP END
 
 LOOP BEGIN at phi_page_rank.cpp(17,5)
@@ -60,12 +57,8 @@ Begin optimization report for: checkConvergence(double *, double *, int, double)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (checkConvergence(double *, double *, int, double)) [2] phi_page_rank.cpp(26,1)
-  -> INLINE (MANUAL): (33,16) std::abs(double)
-  -> (38,14) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-  -> (38,26) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
-  -> (42,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-  -> (42,27) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
+INLINE REPORT: (checkConvergence(double *, double *, int, double)) [2] phi_page_rank.cpp(25,1)
+  -> INLINE (MANUAL): (32,16) std::abs(double)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -76,7 +69,7 @@ LOOP BEGIN at phi_page_rank.cpp(29,5)
 LOOP END
 
 LOOP BEGIN at phi_page_rank.cpp(29,5)
-   remark #15300: LOOP WAS VECTORIZED
+   remark #15301: SIMD LOOP WAS VECTORIZED
    remark #15442: entire loop may be executed in remainder
    remark #15448: unmasked aligned unit stride loads: 2 
    remark #15475: --- begin vector loop cost summary ---
@@ -104,20 +97,20 @@ Begin optimization report for: matrixMultiply(double *, double *, double *, int)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (matrixMultiply(double *, double *, double *, int)) [3] phi_page_rank.cpp(47,1)
+INLINE REPORT: (matrixMultiply(double *, double *, double *, int)) [3] phi_page_rank.cpp(44,1)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at phi_page_rank.cpp(48,5)
+LOOP BEGIN at phi_page_rank.cpp(45,5)
    remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at phi_page_rank.cpp(51,9)
+   LOOP BEGIN at phi_page_rank.cpp(48,9)
    <Peeled loop for vectorization>
    LOOP END
 
-   LOOP BEGIN at phi_page_rank.cpp(51,9)
+   LOOP BEGIN at phi_page_rank.cpp(48,9)
       remark #15300: LOOP WAS VECTORIZED
       remark #15442: entire loop may be executed in remainder
       remark #15448: unmasked aligned unit stride loads: 2 
@@ -128,16 +121,16 @@ LOOP BEGIN at phi_page_rank.cpp(48,5)
       remark #15488: --- end vector loop cost summary ---
    LOOP END
 
-   LOOP BEGIN at phi_page_rank.cpp(51,9)
+   LOOP BEGIN at phi_page_rank.cpp(48,9)
    <Alternate Alignment Vectorized Loop>
    LOOP END
 
-   LOOP BEGIN at phi_page_rank.cpp(51,9)
+   LOOP BEGIN at phi_page_rank.cpp(48,9)
    <Remainder loop for vectorization>
       remark #15301: REMAINDER LOOP WAS VECTORIZED
    LOOP END
 
-   LOOP BEGIN at phi_page_rank.cpp(51,9)
+   LOOP BEGIN at phi_page_rank.cpp(48,9)
    <Remainder loop for vectorization>
    LOOP END
 LOOP END
@@ -147,105 +140,63 @@ Begin optimization report for: pageRank(GraphUtils::NodeGraph *)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (pageRank(GraphUtils::NodeGraph *)) [4] phi_page_rank.cpp(60,1)
-  -> EXTERN: (61,26) GraphUtils::listToMatrix(GraphUtils::NodeGraph *)
-  -> EXTERN: (63,24) GraphUtils::matrixToPrestige(GraphUtils::NodeMatrix *)
-  -> EXTERN: (71,38) MKL_malloc(size_t, int)
-  -> (75,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-  -> (75,31) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
-  -> EXTERN: (76,13) GraphUtils::NodeMatrix::print(GraphUtils::NodeMatrix *)
-  -> INLINE: (79,9) matrixMultiply(double *, double *, double *, int)
-  -> (89,14) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
-  -> INLINE: (91,9) addRandomness(double *, int)
-    -> (21,13) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-    -> (21,35) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
-    -> (21,88) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
-  -> INLINE: (92,29) checkConvergence(double *, double *, int, double)
-    -> INLINE (MANUAL): (33,16) std::abs(double)
-    -> (38,14) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-    -> (38,26) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
-    -> (42,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-    -> (42,27) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
-  -> EXTERN: (94,13) fprintf(FILE *, const char *, ...)
-  -> EXTERN: (95,13) memcpy(void *, const void *, size_t)
-  -> EXTERN: (98,9) memcpy(void *, const void *, size_t)
-  -> EXTERN: (104,9) fprintf(FILE *, const char *, ...)
-  -> EXTERN: (106,5) fprintf(FILE *, const char *, ...)
+INLINE REPORT: (pageRank(GraphUtils::NodeGraph *)) [4] phi_page_rank.cpp(57,1)
+  -> EXTERN: (58,26) GraphUtils::listToMatrix(GraphUtils::NodeGraph *)
+  -> EXTERN: (60,24) GraphUtils::matrixToPrestige(GraphUtils::NodeMatrix *)
+  -> EXTERN: (68,38) MKL_malloc(size_t, int)
+  -> (71,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (71,31) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
+  -> EXTERN: (77,9) cblas_dgemm(CBLAS_LAYOUT, CBLAS_TRANSPOSE, CBLAS_TRANSPOSE, int, int, int, double, const double *, int, const double *, int, double, double *, int)
+  -> INLINE: (87,9) addRandomness(double *, int)
+  -> INLINE: (88,29) checkConvergence(double *, double *, int, double)
+    -> INLINE (MANUAL): (32,16) std::abs(double)
+  -> EXTERN: (90,13) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (91,13) memcpy(void *, const void *, size_t)
+  -> EXTERN: (94,9) memcpy(void *, const void *, size_t)
+  -> EXTERN: (100,9) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (102,5) fprintf(FILE *, const char *, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at phi_page_rank.cpp(77,5)
+LOOP BEGIN at phi_page_rank.cpp(73,5)
    remark #15542: loop was not vectorized: inner loop was already vectorized
 
-   LOOP BEGIN at phi_page_rank.cpp(48,5) inlined into phi_page_rank.cpp(79,9)
-      remark #15542: loop was not vectorized: inner loop was already vectorized
-
-      LOOP BEGIN at phi_page_rank.cpp(51,9) inlined into phi_page_rank.cpp(79,9)
-      <Peeled loop for vectorization>
-      LOOP END
-
-      LOOP BEGIN at phi_page_rank.cpp(51,9) inlined into phi_page_rank.cpp(79,9)
-         remark #15300: LOOP WAS VECTORIZED
-         remark #15442: entire loop may be executed in remainder
-         remark #15448: unmasked aligned unit stride loads: 2 
-         remark #15475: --- begin vector loop cost summary ---
-         remark #15476: scalar loop cost: 13 
-         remark #15477: vector loop cost: 4.000 
-         remark #15478: estimated potential speedup: 3.070 
-         remark #15488: --- end vector loop cost summary ---
-      LOOP END
-
-      LOOP BEGIN at phi_page_rank.cpp(51,9) inlined into phi_page_rank.cpp(79,9)
-      <Alternate Alignment Vectorized Loop>
-      LOOP END
-
-      LOOP BEGIN at phi_page_rank.cpp(51,9) inlined into phi_page_rank.cpp(79,9)
-      <Remainder loop for vectorization>
-         remark #15301: REMAINDER LOOP WAS VECTORIZED
-      LOOP END
-
-      LOOP BEGIN at phi_page_rank.cpp(51,9) inlined into phi_page_rank.cpp(79,9)
-      <Remainder loop for vectorization>
-      LOOP END
-   LOOP END
-
-   LOOP BEGIN at phi_page_rank.cpp(17,5) inlined into phi_page_rank.cpp(91,9)
+   LOOP BEGIN at phi_page_rank.cpp(17,5) inlined into phi_page_rank.cpp(87,9)
    <Peeled loop for vectorization>
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
    LOOP END
 
-   LOOP BEGIN at phi_page_rank.cpp(17,5) inlined into phi_page_rank.cpp(91,9)
+   LOOP BEGIN at phi_page_rank.cpp(17,5) inlined into phi_page_rank.cpp(87,9)
       remark #15301: SIMD LOOP WAS VECTORIZED
       remark #15442: entire loop may be executed in remainder
       remark #15448: unmasked aligned unit stride loads: 1 
       remark #15449: unmasked aligned unit stride stores: 2 
       remark #15475: --- begin vector loop cost summary ---
-      remark #15476: scalar loop cost: 389 
-      remark #15477: vector loop cost: 381.500 
-      remark #15478: estimated potential speedup: 1.010 
-      remark #15485: serialized function calls: 3
+      remark #15476: scalar loop cost: 48 
+      remark #15477: vector loop cost: 5.500 
+      remark #15478: estimated potential speedup: 7.860 
       remark #15488: --- end vector loop cost summary ---
-      remark #15489: --- begin vector function matching report ---
-      remark #15490: Function call: std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) with simdlen=2, actual parameter types: (uniform,uniform)   [ phi_page_rank.cpp(21,13) ]
-      remark #15545: SIMD annotation was not seen, consider adding 'declare simd' directives at function declaration 
-      remark #15490: Function call: std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double) with simdlen=2, actual parameter types: (vector,uniform)   [ phi_page_rank.cpp(21,35) ]
-      remark #15545: SIMD annotation was not seen, consider adding 'declare simd' directives at function declaration 
-      remark #15490: Function call: std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) with simdlen=2, actual parameter types: (vector,uniform)   [ phi_page_rank.cpp(21,88) ]
-      remark #15545: SIMD annotation was not seen, consider adding 'declare simd' directives at function declaration 
-      remark #15493: --- end vector function matching report ---
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 8
    LOOP END
 
-   LOOP BEGIN at phi_page_rank.cpp(17,5) inlined into phi_page_rank.cpp(91,9)
+   LOOP BEGIN at phi_page_rank.cpp(17,5) inlined into phi_page_rank.cpp(87,9)
+   <Remainder loop for vectorization>
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+   LOOP END
+
+   LOOP BEGIN at phi_page_rank.cpp(17,5) inlined into phi_page_rank.cpp(87,9)
    <Remainder loop for vectorization>
    LOOP END
 
-   LOOP BEGIN at phi_page_rank.cpp(29,5) inlined into phi_page_rank.cpp(92,29)
+   LOOP BEGIN at phi_page_rank.cpp(29,5) inlined into phi_page_rank.cpp(88,29)
    <Peeled loop for vectorization>
    LOOP END
 
-   LOOP BEGIN at phi_page_rank.cpp(29,5) inlined into phi_page_rank.cpp(92,29)
-      remark #15300: LOOP WAS VECTORIZED
+   LOOP BEGIN at phi_page_rank.cpp(29,5) inlined into phi_page_rank.cpp(88,29)
+      remark #15301: SIMD LOOP WAS VECTORIZED
       remark #15442: entire loop may be executed in remainder
       remark #15448: unmasked aligned unit stride loads: 2 
       remark #15475: --- begin vector loop cost summary ---
@@ -255,39 +206,39 @@ LOOP BEGIN at phi_page_rank.cpp(77,5)
       remark #15488: --- end vector loop cost summary ---
    LOOP END
 
-   LOOP BEGIN at phi_page_rank.cpp(29,5) inlined into phi_page_rank.cpp(92,29)
+   LOOP BEGIN at phi_page_rank.cpp(29,5) inlined into phi_page_rank.cpp(88,29)
    <Alternate Alignment Vectorized Loop>
    LOOP END
 
-   LOOP BEGIN at phi_page_rank.cpp(29,5) inlined into phi_page_rank.cpp(92,29)
+   LOOP BEGIN at phi_page_rank.cpp(29,5) inlined into phi_page_rank.cpp(88,29)
    <Remainder loop for vectorization>
       remark #15301: REMAINDER LOOP WAS VECTORIZED
    LOOP END
 
-   LOOP BEGIN at phi_page_rank.cpp(29,5) inlined into phi_page_rank.cpp(92,29)
+   LOOP BEGIN at phi_page_rank.cpp(29,5) inlined into phi_page_rank.cpp(88,29)
    <Remainder loop for vectorization>
    LOOP END
 LOOP END
 
-LOOP BEGIN at phi_page_rank.cpp(102,5)
-   remark #15527: loop was not vectorized: function call to fprintf(FILE *, const char *, ...) cannot be vectorized   [ phi_page_rank.cpp(104,9) ]
+LOOP BEGIN at phi_page_rank.cpp(98,5)
+   remark #15527: loop was not vectorized: function call to fprintf(FILE *, const char *, ...) cannot be vectorized   [ phi_page_rank.cpp(100,9) ]
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-phi_page_rank.cpp(98,9):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
-phi_page_rank.cpp(98,9):remark #34014: optimization advice for memcpy: increase the source's alignment to 16 (and use __assume_aligned) to speed up library implementation
-phi_page_rank.cpp(98,9):remark #34026: call to memcpy implemented as a call to optimized library version
-phi_page_rank.cpp(95,13):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
-phi_page_rank.cpp(95,13):remark #34014: optimization advice for memcpy: increase the source's alignment to 16 (and use __assume_aligned) to speed up library implementation
-phi_page_rank.cpp(95,13):remark #34026: call to memcpy implemented as a call to optimized library version
+phi_page_rank.cpp(91,13):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+phi_page_rank.cpp(91,13):remark #34014: optimization advice for memcpy: increase the source's alignment to 16 (and use __assume_aligned) to speed up library implementation
+phi_page_rank.cpp(91,13):remark #34026: call to memcpy implemented as a call to optimized library version
+phi_page_rank.cpp(94,9):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+phi_page_rank.cpp(94,9):remark #34014: optimization advice for memcpy: increase the source's alignment to 16 (and use __assume_aligned) to speed up library implementation
+phi_page_rank.cpp(94,9):remark #34026: call to memcpy implemented as a call to optimized library version
 ===========================================================================
 
 Begin optimization report for: std::char_traits<char>::length(const std::char_traits<char>::char_type *)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (std::char_traits<char>::length(const std::char_traits<char>::char_type *)) [8] /usr/include/c++/4.4.7/bits/char_traits.h(263,7)
+INLINE REPORT: (std::char_traits<char>::length(const std::char_traits<char>::char_type *)) [7] /usr/include/c++/4.4.7/bits/char_traits.h(263,7)
   -> EXTERN: (263,16) __builtin_strlen(const char *)
 
 ===========================================================================
@@ -328,7 +279,7 @@ Begin optimization report for: __sti__$E()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (__sti__$E()) [18] <compiler generated>
+INLINE REPORT: (__sti__$E()) [17] <compiler generated>
   -> EXTERN: /usr/include/c++/4.4.7/iostream:(72,25) __cxa_atexit()
   -> EXTERN: /usr/include/c++/4.4.7/iostream:(72,25) std::ios_base::Init::Init(std::ios_base::Init *)
 
