@@ -1,4 +1,5 @@
 #include "cusparse_graph_utils.h"
+#include <algorithm>
 
 using namespace GraphUtils;
 
@@ -15,8 +16,9 @@ void *check_malloc(size_t size) {
 // Initializes CSRMatrix with 0 based indexing.
 CSRMatrix::CSRMatrix(int w) : width(w) {
    csrRowPtrA = (int *) check_malloc((w+1)*sizeof(int));
-   csrRowPtrA[0] = 0;
-   csrRowPtrA[w] = w;
+   for (int i = 0; i < w; i++) {
+      csrRowPtrA[i] = 0;
+   }
    nnz = 0;
 }
 
@@ -24,7 +26,22 @@ void CSRMatrix::setNnz(int val) {
    nnz = val;
    csrValA = (double *) malloc(nnz*sizeof(double));
    csrColIndA = (int *) malloc(nnz*sizeof(int));
+   csrRowPtrA[width] = val;
 }
+
+class CSRItem {
+public:
+   int row, col;
+   float val;
+   CSRItem(int r, int c, int v) : row(r), col(c), val(v) {}
+   friend class CompareByRow;
+   class CompareByRow {
+      public:
+      bool operator()(const CSRItem a, const CSRItem b) {
+         return a.row < b.row;
+      }
+   };
+};
 
 CSRMatrix *listToCSRMatrix(GraphUtils::NodeGraph *node_graph) {
    CSRMatrix *csr_matrix = new CSRMatrix(node_graph->size());
@@ -45,14 +62,16 @@ CSRMatrix *listToCSRMatrix(GraphUtils::NodeGraph *node_graph) {
          }
       }
    }
+   std::sort(csr_matrix->nodes.begin(), csr_matrix->nodes.end(),
+             Node::CompareById());
 
    // Set nnz value and allocate val and col matrices
    csr_matrix->setNnz(nnz);
 
-   int last_row_seen = 1, cur_index = 0;
+   vector<CSRItem> items;
    // Fill in values;
    for (NodeGraph::iterator graphIt = node_graph->begin();
-        graphIt!= node_graph->end();
+        graphIt != node_graph->end();
         ++graphIt) {
       Node *node_A = graphIt->second;
       for(map<string, Node *>::iterator refIt = node_A->referencedBy.begin();
@@ -63,19 +82,34 @@ CSRMatrix *listToCSRMatrix(GraphUtils::NodeGraph *node_graph) {
          if (node_B->outDegree != 0) {
             // node A is the row and node B is the col (calculating transpose)
             int row = node_A->id_num, col = node_B->id_num;
-            // Update rowPtr if row jump happened.
-            for (; last_row_seen <= row; last_row_seen++) {
-               csr_matrix->csrRowPtrA[last_row_seen] = cur_index;
-            }
-            csr_matrix->csrValA[cur_index] = 1/(double)node_B->outDegree;
-            csr_matrix->csrColIndA[cur_index] = col;
-            cur_index++;
+            items.push_back(CSRItem(row, col, 1/(double)node_B->outDegree));
           }
       }
    }
-   for (; last_row_seen < csr_matrix->width; last_row_seen++) {
-      csr_matrix->csrRowPtrA[last_row_seen] = cur_index;
+   std::sort(items.begin(), items.end(), CSRItem::CompareByRow());
+   int rowNdx = 0, i;
+   printf("size: %d\n", items.size());
+   printf("items vector: ");
+   for (i = 0; i < items.size(); ++i) {
+      printf("%d ", items[i].row);
+      csr_matrix->csrValA[i] = items[i].val;
+      csr_matrix->csrColIndA[i] = items[i].col;
+      for (; rowNdx <= items[i].row; ++rowNdx) {
+         csr_matrix->csrRowPtrA[rowNdx] = i;
+      }
    }
+   printf("\n");
+
+   --i;
+   for (; rowNdx < csr_matrix->width; ++rowNdx) {
+      csr_matrix->csrRowPtrA[rowNdx] = i;
+   }
+
+   printf("Row: ");
+   for (int i = 0; i < csr_matrix->width + 1; i++) {
+      printf("%d ", csr_matrix->csrRowPtrA[i]);
+   }
+   printf("\n");
 
    return csr_matrix;
 }

@@ -23,7 +23,7 @@
 #include <unistd.h>
 
 #ifndef ITERATIONS
-#define ITERATIONS 200 
+#define ITERATIONS 200
 #endif
 
 #ifndef D
@@ -70,6 +70,7 @@ void PageRankKernel(double *val, int *rowptr, int *colndx,
    HANDLE_CUSPARSE(cusparseCreateMatDescr(&descr));
    double multiplier = D;
    double constant = (1-D)/(double)width;
+   //double constant = 0;
 
    HANDLE_CUSPARSE(cusparseDcsrmv(handle, CUSPARSE_OPERATION_NON_TRANSPOSE,
                   width, width, nnz, &multiplier,

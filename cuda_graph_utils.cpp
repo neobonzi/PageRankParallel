@@ -1,4 +1,5 @@
 #include "GraphUtils.h"
+#include <algorithm>
 
 namespace GraphUtils
 {
@@ -23,7 +24,7 @@ NodeMatrix::NodeMatrix(int w) : width(w)
 void NodeMatrix::print() {
     for (int r = 0; r < width; r++) {
         for (int c = 0; c < width; c++) {
-            cout << matrix[INDEX(r, c, width)] << " ";
+            cout << matrix[INDEX(c, r, width)] << " ";
         }
         cout << endl;
     }
@@ -53,6 +54,8 @@ NodeMatrix *listToMatrix(NodeGraph *node_graph) {
          }
       }
    }
+   std::sort(node_matrix->nodes.begin(), node_matrix->nodes.end(),
+             Node::CompareById());
    return node_matrix;       
 }
 

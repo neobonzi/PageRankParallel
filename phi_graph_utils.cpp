@@ -1,4 +1,5 @@
 #include "GraphUtils.h"
+#include <algorithm>
 #include "mkl.h"
 
 namespace GraphUtils
@@ -44,6 +45,8 @@ NodeMatrix *listToMatrix(NodeGraph *node_graph) {
                    node_matrix->width)] += 1/(double)node_B->outDegree;
       }
    }
+   std::sort(node_matrix->nodes.begin(), node_matrix->nodes.end(),
+             Node::CompareById());
    return node_matrix;       
 }
 

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <algorithm>
 #include "GraphUtils.h"
 #include "PageRank.h"
 #include "mkl.h"
@@ -10,6 +11,12 @@
 #define RANDOM_WEIGHT 0.95
 #define DELTA 0.0001
 using namespace GraphUtils;
+
+void updateNodePrestige(vector<Node *> nodes, double *prestige) {
+   for (int i = 0; i < nodes.size(); i++) {
+      nodes[i]->updatePrestige(prestige[i]);
+   }
+}
 
 void addRandomness(double *prestiges, int count)
 {
@@ -95,10 +102,14 @@ void pageRank(NodeGraph *graph)
 
         counter++;
     }
-    for(int k = 0; k < width; k++)
-    {
-        fprintf(stderr, "%d: %lf, ",k, prestige[k]);
-    }
-    fprintf(stderr, "\n");
+   // update Node objects in vertex
+   updateNodePrestige(matrix->nodes, prestige);
 
+   // sort result and print out ranking
+   std::sort(matrix->nodes.begin(), matrix->nodes.end(), Node::CompareByRank());
+   for (int i = 0; i < matrix->nodes.size(); i++) {
+      Node *node = matrix->nodes[i];
+      printf("%d: %s with rank %f\n",
+             i + 1, node->identifier.c_str(), node->curRank); 
+   }
 }

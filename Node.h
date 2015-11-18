@@ -51,5 +51,13 @@ public:
          return a->curRank > b->curRank;
       }
    };
+
+   friend class CompareById;
+   class CompareById {
+      public:
+      bool operator()(const Node *a, const Node *b) {
+         return a->id_num < b->id_num;
+      }
+   };
 };
 #endif
