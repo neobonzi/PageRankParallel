@@ -6,6 +6,7 @@
 #include <cmath>
 #include <stdlib.h>
 #include <stdio.h>
+#include <algorithm>
 
 #define RANDOM_WEIGHT 0.95
 #define DELTA 0.0001
@@ -95,9 +96,10 @@ void pageRank(NodeGraph *graph)
 
         counter++;
     }
+    sort(prestige[k]);
     for(int k = 0; k < width; k++)
     {
-        fprintf(stderr, "%d: %lf, ",k, prestige[k]);
+        fprintf(stderr, "%d: %lf \n",k, prestige[k]);
     }
     fprintf(stderr, "\n");
 
