@@ -159,7 +159,7 @@ void pageRank(GraphUtils::NodeGraph *graph) {
    const int width = matrix->width;
    double *prestige = GraphUtils::matrixToPrestige(matrix);
    
-   const int iterations = 6;
+   const int iterations = 1000;
    //bool converge = false; // TODO: get it working with converge
 
    // while not converge
