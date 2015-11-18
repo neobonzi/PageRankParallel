@@ -7,6 +7,7 @@
 #include <cmath>
 #include <stdlib.h>
 #include <stdio.h>
+#include <algorithm>
 
 #define RANDOM_WEIGHT 0.95
 #define DELTA 0.0001
